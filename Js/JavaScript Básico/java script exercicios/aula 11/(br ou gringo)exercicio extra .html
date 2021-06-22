@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    qual seu pais de origem? <input type="text" name="txt" id="txt">
+    <input type="button" value="ok" onclick="verificar()">
+    <div id="res1"></div>
+    <div id='positivo'></div>
+    <script>
+        function verificar() {
+            var pais = document.querySelector('input#txt')
+            var res1 = document.querySelector('div#res1')
+            var result = String(pais.value)
+            res1.innerHTML = 'voce nasceu no ' + result
+            if (result=='Brasil'){
+                var positivo = document.querySelector('div#positivo')
+                positivo.innerHTML = 'portanto você é brasileiro'
+            }else{
+                var negativo = document.querySelector('div#positivo')
+                negativo.innerHTML = 'portanto você é gringo'
+            }
+            }
+    </script>
+</body>
+</html>
