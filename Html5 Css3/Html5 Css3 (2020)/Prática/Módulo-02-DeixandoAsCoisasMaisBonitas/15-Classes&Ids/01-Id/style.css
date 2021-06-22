@@ -1,0 +1,23 @@
+body{
+    background-color: #dce0ff;
+}
+
+h1, h2{
+    color: #313780;
+}
+
+main{
+    background-color: aliceblue;
+}
+
+p{
+    color: #5563df;
+}
+
+p#principal{
+    font-family: Arial, sans-serif;
+}
+
+h1#principal{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

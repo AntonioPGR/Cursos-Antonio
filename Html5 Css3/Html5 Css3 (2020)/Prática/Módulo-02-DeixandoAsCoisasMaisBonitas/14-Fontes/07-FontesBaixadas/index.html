@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes baixadas</title>
+    <style>
+        @font-face {
+            font-family: 'OldLondon';
+            src: url('fonts/OldLondon.ttf') format('opentype'), url('old_london/Olondon_.otf') format('truetype');
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: 'Lemon';
+            src: url('fonts/Lemon Friday.ttf') format('opentype');
+            font-weight: normal
+        }
+
+        body{
+            font-family: 'Lemon', 'Courier new', fonts
+        }
+
+        h1{
+            font-family: 'OldLondon';
+            font-size: 3em;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Utilizando fontes baixadas</h1>
+    <p>Para utilizar fontes baixadas fazemos o seguinte:
+        <ol>
+            <li>Baixamos a fonte para nossa maquina, existem sites que fazem isso, um exemplo é o <a href="https://www.dafont.com" target="_blank">dafont.com</a></li> 
+            <li>Colocar o arquivo dentro da pasta onde está seu site</li>
+            <li>Crie uma regra no seu css que será o seguinte: 
+                <pre>
+<code>@font-face {
+    font-family: 'nome da fonte';
+    src: url('Local do arquivo') format('formato do arquivo'), url('Local do arquivo') format('formato do arquivo');
+}</code>
+                </pre>
+            </li>
+            <li>Você pode adicionar mais de um formato de fonte para ter mais compatibilidade com outros navegadores.</li>
+            <li>Sobre o <code>Format()</code>, existem 5 tipos:
+                <ul>      
+                    <code>
+                        <li>opentype (geralmente arquivos .otf)</li>
+                        <li>truetype (geralmente arquivos .ttf)</li>
+                        <li>embedded-opentype</li>
+                        <li>truetype-aat (Apple Advanced Typography)</li>
+                        <li>avg</li>
+                    </code>
+                </ul>
+            </li>
+            <li>Pronto! agora você tem a fonte que tu queria em seu site!</li>
+        </ol>
+    </p>
+</body>
+</html>

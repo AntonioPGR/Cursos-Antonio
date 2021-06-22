@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* menu de navegação*/
+
+nav#menu{
+    display: block;
+}
+nav#menu ul {
+    list-style: none; /*some com as bolinhas*/
+    text-transform: uppercase; /* deixa tudo em maiusculo*/
+    position: absolute;
+    top: -15px;
+    left: 40%;
+}
+
+nav#menu li{
+    display: inline;/*configura a exibição das palavras*/
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 1px;
+    box-shadow:2px 2px 10px ;
+    transition: background-color 0.5s;
+}
+
+nav#menu li:hover{
+    background-color: rgb(134, 134, 134);
+}
+
+nav#menu h1{
+    display: none;
+}
+
+nav#menu a{
+    color: black;
+    font-family: Cambria;
+    text-decoration: none;
+}
+
+nav#menu a:hover {
+    color: white;
+}
+
+header#cabecalho img#imgmenu{
+    position: absolute;
+    left: 950px;
+    top: 50px;
+}
+
+/*cabeçalho*/
+
+img#logo{
+    position: relative;
+    top: 5px;
+    left: 10%;
+    padding: 1px;
+}
+
+header#cabecalho {
+    border-bottom: 1px rgb(100, 100, 100) solid;
+    height: 160px;
+}
+
+h2#subtitulo{
+    position: relative;
+    left: 10px;
+    color: rgb(34, 34, 34);
+    margin: 10px 0px 5px 0px;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+/**/
+
+footer p#copy{
+    font-family: Cambria;
+}
+footer#rodape{
+    border-top: 1px #606060 solid;
+    clear: both;
+}
+
+p#copy{
+    padding-top: 5px;
+    text-align: center;
+    color: black;
+}
+
+p#copy a{
+    color: black;
+}
+
+/*interfaçe*/
+
+div#interface{
+    width: 1000px;
+    margin: 20px auto 20px auto; /* cima direita baixo esquerda*/
+    box-shadow: 0px 0px 10px gray;
+    padding: 10px;
+}
+
+/* titulo, subtitulo e texto*/
+
+section#corpo h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+}
+
+section#corpo h3{
+    font-size: 15px;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+section#corpo p{
+    text-align: justify;
+    vertical-align: middle;
+    font-family: 'Times New Roman',sans-serif;
+}
+
+/* Fim do basico */
+
+ul#albumFotos li span{
+    opacity: 0;
+    transition: opacity 1s;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, .3);
+    font-size: 12pt;
+    line-height: 370px;
+    padding: 3px;
+}
+
+
+ul#albumFotos li {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 5px solid #ffffff;
+    background-color: #ffffff; 
+    box-shadow: rgba(0, 0, 0, .4) 1px 1px 3px;
+    -webkit-transition: all .4s ease-in;
+}
+
+ul#albumFotos li:hover span{
+    opacity: 1;
+}
+
+ul#albumFotos li:hover{
+    -webkit-transform: scale(1.5);
+}
+
+ul#albumFotos{
+    width: 700px;
+    margin: 0px auto;
+    padding: 50px;
+    overflow: hidden;
+    list-style: none;
+}
+
+ul#albumFotos li#foto1{
+    background: url(../imagens/imagensFotos/foto1.jpg) no-repeat;
+    background-position: 50% 70%;
+    background-size: 395px 410px;
+    background-color: #ffffff;
+}
+ul#albumFotos li#foto1:hover{
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+ul#albumFotos li#foto2{
+    background: url(../imagens/imagensFotos/foto\ 2.jpg) no-repeat;
+    background-position: 50% 70%;
+    background-size: 539px 401px;
+    background-color: #ffffff;
+}
+ul#albumFotos li#foto2:hover{
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+ul#albumFotos li#foto3{
+    background: url(../imagens/imagensFotos/foto3.jpg);
+    background-position: 40% 50%;
+    background-size: 400px 398px;
+}
+
+ul#albumFotos li#foto3:hover{
+    background-size: 200px 200px;
+    background-position: 0px 0px;
+}
+
+ul#albumFotos li#foto4{
+    background: url(../imagens/imagensFotos/foto4.png);
+    background-size: 421px 423px;
+    background-position: 50% 50%;
+}
+
+ul#albumFotos li#foto4:hover{
+    background-size: 200px 200px;
+    background-position: 0px 0px;
+}
+
+ul#albumFotos li#foto5{
+    background: url(../imagens/imagensFotos/foto5.jpg);
+    background-position: 50% 20%;
+    background-size: 287px 290px;
+}
+
+ul#albumFotos li#foto5:hover{
+    background-size: 200px 200px;
+    background-position: 0px 0px;
+}
+
+ul#albumFotos li#foto6{
+    background: url(../imagens/imagensFotos/foto6.jpg);
+    background-position: 50% 20%;
+    background-size: 400px 400px;
+}
+ul#albumFotos li#foto6:hover{
+    background-size: 200px 200px;
+    background-position: 0px 0px;
+}

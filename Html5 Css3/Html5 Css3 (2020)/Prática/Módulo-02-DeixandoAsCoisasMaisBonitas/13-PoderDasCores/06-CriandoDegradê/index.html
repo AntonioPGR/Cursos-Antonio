@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        div{
+            height: 100%;
+        }
+        body{
+            background-image: linear-gradient(to bottom, #3986DE 5%, #755CC3 25%, #BA3590 55%, #E23D5F 65%, #E08D65 90%, #FCCE6E );
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Criando degradês com css</h1>
+        <p>Para criar degradês, usamos o parâmetro <code>linear-gradient(direção, cor de inicio, cores de transição, cor de fim)</code> <br>
+        obs: a direção pode ser tanto escrita (to bottom, to left), ou em graus (45deg, 90deg). E se pode tbm configurar a porcentegem apenasadicionando x% após a cor, sem virgula nem nada. Porem o proximo valor deve ser maior que o anterior, tipo, o azul vai até 10%, então o roxo, se por valor 20%, ele vai do 10% do azual até o vinte que está nele. exemplo aplicado nese background</p>
+        <p>Podemos tambem usar o <code>radial-gradient(circle, cor de inicio, cores de transição, cor de fim</code>, que criará um gradiente circular, exemplo que foi aplicado no background da <a href="pag002.html">pagina 2</a></p>
+    </div>
+</body>
+</html>

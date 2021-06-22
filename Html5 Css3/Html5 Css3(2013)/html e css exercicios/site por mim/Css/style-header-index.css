@@ -1,0 +1,48 @@
+/* Abaixo: Cabeçalho */
+
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
+
+header#cabecalho{
+    background-color: rgb(254, 231, 78);
+    position: relative;
+    margin: -10px -10px 0px -10px;
+}
+
+/* imagens */
+
+header#cabecalho img#logo {
+    position: relative;
+    top: 5px;
+    left: 40px;
+}
+
+header#cabecalho img#lupa{
+    position: relative;
+    float: right;
+    right: -90px;
+    top: -69px;
+}
+
+/* textos */
+
+header#cabecalho h1{
+    font-family:'MuseoModerno', cursive;
+    font-size: 20px;
+    color: rgb(0, 13, 128) ;
+    margin: 5px 0px 0px 10px;
+}
+
+header#cabecalho input#pesquisa{
+    position: relative;
+    float: right;
+    right: 500px;
+    top: -70px;
+    height: 20px;
+    border: none ;
+}
+
+header#cabecalho input#pesquisa:focus{
+    border: none ;
+}
+
+

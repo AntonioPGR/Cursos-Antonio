@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>você é br ou estrangeiro?</title>
+</head>
+<body>
+        <h1> Sistema de Multas</h1>
+        sua velocidade era de: <input type="number" name="txtvel" id="txtvel"> km/h
+        <input type="button" value="ok" onclick="clicou()">
+        <div id="res"></div>
+        <div id="positivo"></div>
+        <div id= "negativo"></div>
+<script>
+        function clicou(){
+            var txtv = document.querySelector('input#txtvel')
+            var res = document.querySelector('div#res')
+            var vel = Number(txtv.value)
+            res.innerHTML = 'sua velocidade era de ' + vel + 'km/h'
+            if(vel<=100){
+                var positivo = document.querySelector('div#positivo')
+                positivo.innerHTML= 'você não foi multado, lembre sempre de prestar atenção nas placas' 
+            }else{
+                var negativo = document.querySelector('div#negativo')
+                negativo.innerHTML = 'sua velocidade ultrapassou o maximo permitido, MULTADO'
+            }
+            }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borda Personalizada</title>
+    <style>
+        h1{
+            border: 10px solid black;
+            padding: 10px;
+            border-image-source: url('borda.png');
+            border-image-slice: 40;
+            border-image-repeat: repeat;
+        }
+
+        p {
+            border-image: url('borda.png') 40 repeat;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bordas personalizadas</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem dignissimos mollitia numquam nesciunt non provident enim, nobis eos quis itaque beatae dolorem dolore, illum maiores totam praesentium ipsum necessitatibus voluptate.</p>
+</body>
+</html>

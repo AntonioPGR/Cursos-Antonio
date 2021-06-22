@@ -1,0 +1,39 @@
+body{
+    background-color: #dce0ff;
+}
+
+main{
+    background-color: aliceblue;
+}
+
+h1.tit_principal{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: #dce0ff;
+    background-color: #313780;
+}
+
+h1.cursos{
+    color: #313780;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2.basico{
+    color: #3a9b3a;
+}
+
+h2.avancado{
+    color: #aa2748;
+}
+
+p{
+    color: #1f2452;
+}
+
+p#p_principal{
+    font-family: Arial, sans-serif;
+}
+
+.destaque{
+    background-color: rgba(255, 255, 0, 0.39);
+}

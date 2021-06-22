@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famílias de Fontes em Css</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.9em;
+        }
+
+        h1, h2{
+            font: italic bold 3em 'Arial', sans-serif;
+        }
+
+        span#ligh{
+            font-weight: lighter;
+        }
+
+        span#normal{
+            font-weight: normal;
+        }
+
+        span#bold{
+            font-weight: bold;
+        }
+
+        span#bolder{
+            font-weight: bolder;
+        }
+
+        span#ital{
+            font-style: italic;
+        }
+
+        span#sub{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Peso da fonte</h1>
+    <p>
+        O peso da fonte é setado através do parâmetro <code>font-weight: peso;</code>, e possui alguns valores. Para começar, ele tem 4 valores escritor, são eles: <span id="ligh">lighter</span> <span id="normal">normal</span> <span id="bold">bold</span> <span id="bolder">bolder</span>. E alem disso, possui uma escala, que vai de 100 a 900 de 100 em 100, que tbm indica o peso.
+    </p>
+
+    <h1>Estilo</h1>
+    <p>
+        Hoje me dia se usa muito um <span id="ital">italico</span>, ou um <span id="sub">sublinhado</span>, e para se fazer isso é simples:
+        <ul>
+            <li>Italico: <code>font-style: italic;</code></li>
+            <li>Sublinhado: <code>text-decoration: underline</code></li>
+        </ul>
+    </p>
+
+    <h1>ShortHand</h1>
+    <p>E agora, está com preguiça de escrever muito e fica muito grande setar e fonte e decora-la?? bem, temos uma solução, basta usar a tag <code>font: font-style font-weight font-size font-family;</code>, bem mais facil não é? há, e mais uma coisa, os valores não são obrigatórios, então se, por exemplo, você não passar um font-weight, o navegador usará o padrão ou um setado anteriormente, Porem, a ordem deve permanecer a mesma, caso seja uma ordem diferente não funcionará</p>
+</body>
+</html>

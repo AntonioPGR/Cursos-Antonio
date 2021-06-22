@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famílias de Fontes em Css</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.9em;
+        }
+        
+        h1, h2{
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tamanho de fontes</h1>
+    <p>
+        O tamanho de uma fonte pode ser alterado de maneira simples através do comando: <code>font-family: tamanho da fonte;</code>. Porem, uma das coisas que é muito controversa é que medida usar no tamanho de uma fonte. Para te falar, vou primeiro te mostrar as medidas possiveis. As medidas são dividias em dois tipos:
+    </p>
+
+    <h2>Absolutas</h2>
+    <ul>
+        <li>cm</li>
+        <li>mm</li>
+        <li>in ( polegada )</li>
+        <li>px</li>
+        <li>pt</li>
+        <li>pc</li>
+    </ul>
+        
+    <h2>Relativas</h2>
+    <ul>
+        <li>em</li>
+        <li>ex</li>
+        <li>rem</li>
+        <li>vw</li>
+        <li>vh</li>
+        <li>%</li>
+    </ul>
+
+    <h2>Mas afinal, qual usar?</h2>
+    <p>
+        Bem, sobre isso, muitos programadores usam medidas variadas, porém, o w3c, orgão que cuida do html e do css, recomenda que se usa principalmente o <strong>em</strong>, e tambem se pode usar o px, mas dando preferencia ao em. Agora, em base de que o em trabalha? bem, ele é uma medida relativa a fonte original, e, na maioria de seus navegadores a fonte padrão é 16px, então, 1em = 16px, assim como 2em=32 e tbm 1.5em=24px.
+    </p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de caixas</title>
+    <style>
+        h1{
+            background-color: aqua;
+            width: 400px;
+            height: 200px;
+            padding: 10px;
+            border: 5px dashed black;
+            margin: 10px 10px 40px;
+            outline: 8px double magenta;
+        }
+
+        a{
+            width: 300px;
+            border: red dotted 5px;
+            padding: 10px 5px 10px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalando com modelo de caixas</h1>
+    <p>No html5 temos dois tipos de modelos de caixa, os box-level e os inline-level. A tag <code>&lt;h1&gt;</code> é um exemplo de box-level, pois ocupa a linha toda, já <a href="#">os links</a>, são exeplos de tags inline-level.</p>
+
+    <h2>Atributos de uma caixa</h2>
+    <p>Podemos dividir uma caixa em 5 partes, são elas:</p>
+    <ul>
+        <li>Conteudo: parte central onde se insere o conteudo da caixa</li>
+        <li>Padding: parte que circula o conteudo e regulo o espaço entre ele e a borda</li>
+        <li>Border: parte a qual circula o padding e define os limites da caixa</li>
+        <li>OutLine: parte que circula o Border. Ela funciona como uma borda externa que ocupa o espaço do margim, ela não possui um espaço próprio</li>
+        <li>Margim: parte que circula a borda e define uma margem diante a outra caixa que ficará próxima.</li>
+    </ul>
+    
+    <h2>Tipos de caixasBox Level</h2>
+    <ul>
+        <li>Box-level: é uma caixa onde ela, por padrão, ocupa totalmente a linha e fica 'isolada', como o <code>&lt;h1&gt;</code> acima.</li>
+        <li>Inline-level: já esse outro tipo compartilha a linha com outros elementos, como a tag <code>&lt;a&gt;</code> destacada acima</li>
+    </ul>
+    <p></p>
+</body>
+</html>

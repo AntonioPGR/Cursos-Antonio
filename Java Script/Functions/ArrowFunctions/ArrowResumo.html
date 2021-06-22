@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // let soma = (n1, n2) => n1+n2
+        // console.log(soma(4, 7))
+
+        // let community = () => 'Redstone Gang'
+        // console.log(community())
+
+        // let dobro = value => 2*value
+        // console.log(dobro(10))
+
+        // Para que o js não pensem que as chaves do Json são as da arrow func, deve-se por entr parêntreses
+        // let person = () => ({nome:'Antonio', 
+        //                     altura: 1.80,
+        //                     corOlhos:'Marrom'})
+        // console.log(person())
+
+        // Quando criamos uma IIFE, permitimos que duas variaveis tenham o mesmo nome da função e que ela não seja executada pelo console do navegador
+        // (() =>{
+        //     let person = () => ({nome:'Antonio'})
+        //     console.log(person())
+        // })();
+
+        // (() =>{
+        //     let person = () => ({nome:'Luana'})
+        //     console.log(person())
+        // })()
+
+        // ( () =>{
+        //     function Person(){
+        //         this.year = 0
+        //         let person = this
+
+        //         setInterval(function() {
+        //             person.year++
+        //             console.log('idade:', person.year)
+        //             console.log('this:', person)
+        //         }, 1000)
+        //     }
+
+        //     const p1 = new Person()
+        //     p1.setInterval()
+        // })()
+
+        ( () =>{
+            function Person(){
+                this.year = 0
+
+                setInterval(() => {
+                    this.year++
+                    console.log('idade:',  this.year)
+                    console.log('this:', this)
+                }, 1000)
+            }
+
+            const p1 = new Person()
+            p1.setInterval()
+        })()
+    </script>
+</body>
+</html>

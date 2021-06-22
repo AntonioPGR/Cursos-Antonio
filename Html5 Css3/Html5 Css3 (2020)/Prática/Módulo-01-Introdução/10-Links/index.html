@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+</head>
+<body>
+    <h1>Trabalhando com links</h1>
+    <p>Você pode criar links usando a tag <code>a</code></p>
+
+    <h2>Links externos</h2>
+    <p>Você criar links externos com o parametro <code>href='url do site'</code>, veja o exemplo abaixo:</p>
+        <p>deseja aprender programação? acesse o canal do <a href="https://www.youtube.com/cursoemvideo/">curso em video</a> no youtube</p>
+
+    <p>Como você viu, acessando esse link o site abre na mesma aba que o nosso, e isso pode ser ruim pois o usuario provavelmente não voltará, então, para abrir um link em outra aba, use o parametro <code>target='_blank'</code>. Segue outro exemplo abaixo</p>
+        <p>deseja aprender programação? acesse o canal do <a href="https://www.youtube.com/cursoemvideo/" target="_blank" rel="external">curso em video</a> no youtube</p>
+
+    <h2>Links internos</h2>
+    <p>links internos são usados para navegação entre documentos do mesmo site, e para isso, basta que o outro documento esteja na mesma pasta e você digite o <code>href='nome do documento'</code>, veja um exemplo abaixo:</p>
+        <p>Você esta na primeira pagina de nosso site, caso queira, você pode acessar a <a href="pag002.html" rel="next">segunda pagina</a></p>
+    <p>Para acessar documentos em outras pastas você tera que usar um <code>href='nome da pasta/nome do documento</code>, e para isso tambem temos um exemplo: </p>
+        <p>Caso queira, você tambem pode acessar a <a href="noticias/pag003.html">terceira página</a> que está dentro da pagina notícias</p>
+    
+    <h2>Download de arquivos</h2>
+    <p>Para criar um link de download, basta criar um <code>href='nome do arquivo'</code> com mais dois parametros <code>download='nome do arquivo' type='tipo do arquivo de arcordo com a <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">iana.org</a>'</code>. Segue um exemplo abaixo:</p>
+    <ul>
+        <li><a href="downloads/10 - Ligações em toda parte.pdf" target="_blank" download="10 - Ligações em toda parte.pdf" type="application/pdf">Baixar capitulo 10 em PDF</a></li>
+        <li><a href="downloads/10 - Ligações em toda parte.rar" download="10 - Ligações em toda parte.rar" type="application/vnd.rar">Baixar capitulo 10 em Rar</a></li>
+    </ul>
+</body>
+</html>

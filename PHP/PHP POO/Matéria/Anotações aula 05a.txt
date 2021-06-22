@@ -1,0 +1,46 @@
+cc = corrente
+cp = poupança
+
+abrir conta:
+status muda para vdd
+
+quando abre:
+dizer tipo de conta quer abrir
+se  corrente(ganha 50)
+se poupança(ganha 150)
+
+fechar conta:
+Não pode fechar com debito 
+Não pode fechar com dinheiro a mais
+
+depositar:
+tem que estar aberta
+
+sacar:
+tem que ta aberta 
+tem que ter dinheiro
+
+pagar mensal:
+corrente: paga 12
+poupança: paga 20
+
+visibilidade:
++ NumConta
+# tipo
+- dono
+- saldo
+- status
++ Funções
+
+funções:
+abrir conta()
+fecha conta()
+depositar()
+sacar()
+pagMensal()
+alem do set e get para todos 
+os outros
+
+Cosntrutor:
+saldo = 0
+status = false

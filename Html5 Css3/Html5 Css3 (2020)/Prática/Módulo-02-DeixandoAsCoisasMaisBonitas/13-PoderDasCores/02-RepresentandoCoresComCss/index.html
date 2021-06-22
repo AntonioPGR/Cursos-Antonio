@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores em css</title>
+</head>
+<body>
+    <h1>Representando cores em css</h1>
+    <p>Nesse arquivo teremos varias formas de representar cores em css, o efeito visual é o mesmo, mas o código varia, então caso deseje, acesse o código da página para ver melhor</p>
+
+    <h2 style="background-color: blue; color: white;">Cores através do nome</h2>
+    <p>Podemos usar cores através de seu nome em inglês, porem essa opção deixa a gente muito limitada e nem perto do maximo de cor que poderiamos usar com os outros modos, mas é possivel de se usar.</p>
+
+    <h2 style="background-color: #ff00ff; color: #ffffff;">Cores em Hexadecimal</h2>
+    <p>
+        O código hexadecimal é um geito de representar cor através de 6 caracteres, esses seis caracteres podem ser 0 1 2 3 4 5 6 7 8 9, que são os binários, e A B C D E F, que fecham os 16 para se dar o noma hexadecimal. Com esses algaritimos representamos usando o seguinte esquema: <br>
+        <code>#rrggbb</code> <br>
+        onde o r representa a quantidade de vermelho, o g a de verde e o b a de azul, e nessa escala, 0 é o que possui o menor valor e F o maior
+    </p>
+
+    <h2 style="background-color: rgb(0, 255, 255); color: rgb(255, 255, 255);">Cores em rgb</h2>
+    <p>
+        Basicamente, o código rgb é a mesma coisa que o hexadecimal, mas representado de outra forma: <br>
+        <code>rgb(r, g, b, t)</code> <br>
+        onde o r é a quantidade de vermelho, o g de verde o b de azul, sendo que a quantidade vai de 0 a 255. Porém, tambem podemos usar de transparencia nesse método, que esta sendo representada pelo t, ela basicamente vai de 0 a 1 e regula o quão transparente a cor será
+    </p>
+
+    <h2 style="background-color: hsl(30, 100%, 50%); color: hsl(0, 0%, 100%);">Cores em hsl</h2>
+    <p>
+        Podemos tambem representar cores através do metodo: <br>
+        <code>hsl(m, s%, l%)</code> <br>
+        Onde, nesse método, usamos três informações, a matiz(hue), a saturação e a luminosidade. Para representar os valores, a mitiz é igual o rgb, onde se vai de 0 a 255, porem os outros dois vão de 0% até 100%.
+    </p>
+</body>
+</html>

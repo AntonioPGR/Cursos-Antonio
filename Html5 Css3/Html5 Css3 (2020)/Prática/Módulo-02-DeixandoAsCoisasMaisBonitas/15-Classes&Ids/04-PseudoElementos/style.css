@@ -1,0 +1,32 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:visited{
+    color: red;
+}
+
+a:active{
+    color: darkred;
+}
+
+span::before{
+    content: ' --> ';
+    color: rgb(196, 46, 46);
+    font-weight: bold;
+}
+
+span::after{
+    content: ' <-- ';
+    color: rgb(196, 46, 46);
+    font-weight: bold;
+}
