@@ -12,11 +12,18 @@ button.addEventListener('click', () => {
 
     tarefas.push([n_tarefa, txt_tarefa.value])
     n_tarefa++
-    console.log(tarefas)
-    lista.innerHTML += `<p id='${tarefas[tarefas.length - 1][0]}'><input type="checkbox">${txt_tarefa.value}<input type="button" onclick="deletar(${tarefas[tarefas.length - 1][0]})" value="Excluir"></p>`
+    
+    exibir()
+    
     txt_tarefa.value = ''
 })
 
 function deletar(num){
-    console.log(num)
+    delete tarefas[num]
+    exibir()
+}
+
+function exibir() {
+    lista.innerHTML = ''
+    tarefas.forEach((element) => lista.innerHTML += `<p id='${element[0]}'><input type="checkbox">${element[1]}<input type="button" onclick="deletar(${element[0]})" value="Excluir"></p>`)
 }
