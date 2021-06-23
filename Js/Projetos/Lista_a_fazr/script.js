@@ -25,5 +25,35 @@ function deletar(num){
 
 function exibir() {
     lista.innerHTML = ''
-    tarefas.forEach((element) => lista.innerHTML += `<p id='${element[0]}'><input type="checkbox">${element[1]}<input type="button" onclick="deletar(${element[0]})" value="Excluir"></p>`)
+    let fragment = document.createDocumentFragment();
+
+    tarefas.forEach((element) => {
+
+        // criando paragrafo onde ficara o elemento da lista
+        let p = document.createElement('p')
+        p.setAttribute('id', `${element[0]}`)
+
+        // checkbox de concluido
+        let checkbox = document.createElement('input')
+        checkbox.setAttribute('type', 'checkbox')
+
+        // span contendo o texto
+        let text = document.createElement('span')
+        text.textContent = element[1]
+
+        // botão de deletar
+        let bt_excluir = document.createElement('input')
+        bt_excluir.setAttribute('type', 'button')
+        bt_excluir.setAttribute('value', '🗑️')
+        bt_excluir.setAttribute('class', 'bt_excluir')
+        bt_excluir.setAttribute('onclick', `deletar(${element[0]})`)
+        //num => delete tarefas[num]
+
+        // inserindo conteudo no paragrafo
+        p.insertAdjacentElement('afterbegin', checkbox)
+        p.insertAdjacentElement('beforeend', text)
+        p.insertAdjacentElement('beforeend', bt_excluir)
+        fragment.appendChild(p)
+    })
+    lista.appendChild(fragment)
 }

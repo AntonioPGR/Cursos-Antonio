@@ -5,15 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A fazeres</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(253, 253, 110);
+        }
+
+        main{
+            width: 500px;
+            background-color: white;
+            border-radius: 20px;
+            margin: auto;
+            min-height: 400px;
+        }
+
+        section{
+            border-bottom: 1px solid black;
+            padding: 20px 0px;
+        }
+
+        div#tarefas{
+            text-align: justify;
+            padding: 5px;
+        }
+
+        div#tarefas > p > *{
+            margin-left: 10px;
+        }
+
+        input.bt_excluir{
+            background-color: rgb(247, 101, 101);
+            border: red 1px solid;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Lista de afazeres</h1>
-    <section id="add_tarefa">
-        <input type="text" id="input_afzr">
-        <input type="button" id="adicionar" value="Adicionar a lista">
-    </section>
-    <div id="tarefas">
-    </div>
+    
+    <main>
+        <section>
+            <input type="text" id="input_afzr">
+            <input type="button" id="adicionar" value="Adicionar a lista">
+        </section>
+        <div id="tarefas">
+        </div>
+    </main>
 </body>
 <body>
     <script src="script.js"></script>

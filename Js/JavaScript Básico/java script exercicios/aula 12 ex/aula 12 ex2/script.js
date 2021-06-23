@@ -59,7 +59,7 @@ function verificar(){
     }
     }
 }
-// outro jeito de po imagem    
+// outro jeito de por imagem    
     //var img1 = document.createElement('img')
     //img1.setAttribute('id', 'foto')
     // onde vai por a img:
