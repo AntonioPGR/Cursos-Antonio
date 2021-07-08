@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form_num" action="teste.php" method="post" onsubmit="return verify_input()">
+        <p><input type="number" name="numero" id=""> insira um numero entre 0 e 10</p>
+        <button type="submit">enviar</button>
+    </form>
+</body>
+<body>
+    <script>
+        function verify_input(){
+            let numero = document.forms['form_num']['numero'].value
+            if (numero < 0 || numero > 10){
+                alert('insira um numero valido')
+                return false
+            } else {
+                console.log('ok')
+                return true
+            }
+        }
+    </script>
+</body>
+</html>
