@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Counter: <output id="result"></output></p>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+</body>
+<body>
+    <script>
+        let w;
+        function start(){
+            w = new Worker('teste.js')
+            w.onmessage = (event) => {
+                document.querySelector('output#result').innerHTML = event.data
+                console.log(event.data)
+            }
+        }
+        function stop(){
+            w.terminate()
+        }
+    </script>
+</body>
+</html>

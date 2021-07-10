@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="CreateLocalData()">Create local data</button>
+    <button onclick="ShowLocalData()">Show local data</button>
+    <button onclick="CreateSessionData()">Create Session data</button>
+    <button onclick="ShowSessionData()">Show session data</button>
+</body>
+<body>
+    <script>
+        // dados permanentes, como os cookies
+        CreateLocalData = ()=>localStorage.setItem('nome', 'antonio pacheco')
+        ShowLocalData = ()=>console.log(localStorage.getItem('nome'))
+        
+        // dados temporários, apenas enquanto aba está aberta
+        CreateSessionData = ()=>sessionStorage.setItem('nome', 'José magalhães')
+        ShowSessionData = ()=>console.log(sessionStorage.getItem('nome'))
+    </script>
+</body>
+</html>
