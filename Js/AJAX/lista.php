@@ -1,5 +1,5 @@
 <?php
- 
+
 $users = [
 
     "Antonio",
@@ -12,3 +12,5 @@ $users = [
 ];
 
 echo json_encode($users);
+
+?>
