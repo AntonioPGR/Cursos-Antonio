@@ -12,7 +12,6 @@ button.addEventListener('click', ()=>{
     ajax.addEventListener('readystatechange', ()=>{
         if (ajax.readyState === 4 && ajax.status === 200){
         let lista_users = ajax.response
-        console.log(lista_users)
         exibe_usuarios(lista_users)
         }
     })
