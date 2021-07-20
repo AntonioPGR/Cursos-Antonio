@@ -1,9 +1,6 @@
 <?php
 
-$comments = array(
-    array('Antonio', 'muito bom'),
-    array('Jose', 'daora'),
-);
+$comments = array();
 
 $counter = 0;
 $comment = array();

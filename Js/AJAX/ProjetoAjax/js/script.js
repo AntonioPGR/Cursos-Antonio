@@ -10,17 +10,31 @@ document.querySelector('button#bt_enviar').addEventListener('click', () => {
     ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     ajax.send(`name=${nome}&comment=${comentario}`)
 
+    ajax.responseType = 'json'
+
     ajax.onreadystatechange = () => {
         if (ajax.status == 200 && ajax.readyState == 4){
             const comments = ajax.response
-            const lista_comments = document.querySelector('ul#lista_comentarios')
+            console.log(comments)
+
+            try {
+                let node = document.getElementById('aside')
+                node.parentNode.removeChild(node)
+            } catch {
+                console.log('nada a deletar')
+            }
+
+            const aside = document.createElement('aside')
+            aside.setAttribute('id', 'aside')
+            const ul = document.createElement('ul')
+            ul.setAttribute('id', 'lista_comentarios')
 
             comments.map((value, index)=>{
                 let li = document.createElement('li')
-                if (index%2 == 0){
-                    li.setAttribute('id', 'gray')
+                if (index%2 === 0){
+                    li.setAttribute('class', 'gray')
                 } else {
-                    li.setAttribute('id', 'white')
+                    li.setAttribute('class', 'white')
                 }
 
                 let nome = document.createElement('p')
@@ -33,10 +47,12 @@ document.querySelector('button#bt_enviar').addEventListener('click', () => {
 
                 li.appendChild(nome)
                 li.appendChild(comentario)
-
-                lista_comments.appendChild(li)
+                
+                ul.appendChild(li)
             })
-
+            
+            aside.appendChild(ul)
+            document.getElementById('principal').appendChild(aside)
         }
     }
 })
