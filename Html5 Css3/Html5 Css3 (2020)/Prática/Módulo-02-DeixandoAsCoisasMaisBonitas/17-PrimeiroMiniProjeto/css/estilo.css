@@ -26,6 +26,7 @@
 
 p{
     text-indent: 2em;
+    line-height: 1.5em;
 }
 
 body{
@@ -34,7 +35,7 @@ body{
 
 header{
     text-align: center;
-    background-image: linear-gradient(to bottom, #37C878, #278d55 );
+    background-image: linear-gradient(to bottom, var(--verde), var(--verdeEscuro) );
     color: white;
     padding-top: 10px;
 }
@@ -44,6 +45,7 @@ header > h1{
     font-size: 2em;
     margin: 10px 0px 0px;
     font: 3em var(--fonteTitPrincipal);
+    text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.315);
 }
 
 header > p{
@@ -62,7 +64,7 @@ a.nav_link{
     text-decoration: none;
     padding: 10px;
     margin: 0px 5px;
-    transition: 0.5s;
+    transition-duration: 0.5s;
 }
 
 a.nav_link:hover{
@@ -97,12 +99,16 @@ h1.tit_destaque{
 
 p.p_materia{
     padding: 5px;
-    margin: 0px 5px;
+    margin: 10px 15px;
     text-align: justify;
 }
 
 img.img_conteudo{
     width: 95%;
+}
+
+img#mascote-android-atual{
+    max-width: 350px;
 }
 
 strong, a{
@@ -153,7 +159,7 @@ footer{
         width: 100%;
     }
 
-    div#vide{
+    section#video{
         padding: 0px;
     }
 
