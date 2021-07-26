@@ -4,14 +4,14 @@ cep.addEventListener('blur', (e)=>{
     let search = cep.value.replace('-', '')
     const options = {
         method: 'GET',
-        mofr: 'cors',
-        chace: 'default',
+        mode: 'cors',
+        cache: 'default'
     }
 
-    
+    fetch(`https://viacep.com.br/ws/${cep}/json/`, options)
     .then(response=>{
         response.json()
-        .then( datafetch(`https://viacep.com.br/ws/${cep}/json/`, options) =>{
+        .then( data =>{
             console.log(data)
         })
     })
