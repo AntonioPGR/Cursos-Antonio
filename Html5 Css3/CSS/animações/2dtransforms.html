@@ -4,10 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animações 2d</title>
     
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            transition: 3s;
+            margin: 20px;
+        }
+
+        div#mover_quadrado:hover{
+            transform: translate(50px, 50px);
+        }
+
+        div#rodar:hover{
+            transform: rotate(-360deg);
+        }
+
+        div#mudar_escala:hover{
+            transform: scale(0.5, 0.5);
+        }
+
+        div#escalaY:hover{
+            transform: scaleY(0.5);
+        }
+
+        div#escalaX:hover{
+            transform: scaleX(0.5);
+        }
+
+        div#skew:hover{
+            transform: skew(10deg, 30deg);
+        }
+
+        div#skewX:hover{
+            transform: skewX(50deg);
+        }
+
+        div#skewY:hover{
+            transform: skewY(50deg);
+        }
+
+        div#matrix:hover{
+            /*matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())*/
+            transform: matrix(2, 0, 0, 1.2, 30, -30);
+        }
+    </style>
+
 </head>
 <body>
-    
+    <div style="background-color: red;" id="mover_quadrado">translate</div>
+
+    <div style="background-color: royalblue;" id="rodar">rotate</div>
+
+    <div style="background-color: seagreen;" id="mudar_escala">scale</div>
+
+    <div style="background-color: skyblue;" id="escalaY">scaleY</div>
+
+    <div style="background-color: violet;" id="escalaX">scaleX</div>
+
+    <div style="background-color: yellow;" id="skew">skew</div>
+
+    <div style="background-color: teal;" id="skewX">skewX</div>
+
+    <div style="background-color: powderblue;" id="skewY">skewY</div>
+
+    <div style="background-color: sandybrown;" id="matrix">matrix</div>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: red;
+        }
+
+        div#mudar_cor:hover{
+            animation-name: muda_cor;
+            animation-duration: 4s;
+        }
+
+        @keyframes muda_cor{
+            from {background-color: red;}
+            to {background-color: blue;}
+        }
+
+        div#mudar_cor2:hover{
+            animation-name: muda_cor2;
+            animation-duration: 4s;
+        }
+
+        @keyframes muda_cor2{
+            0%{background-color: red;}
+            25%{background-color: yellow;}
+            50%{background-color: violet;}
+            75%{background-color: teal;}
+            100%{background-color: blue;}
+        }
+    </style>
+
+</head>
+<body>
+    <div id="mudar_cor"></div>
+    <div id="mudar_cor2"></div>
+</body>
+</html>
