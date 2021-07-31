@@ -11,6 +11,7 @@
             width: 100px;
             height: 100px;
             margin: 20px;
+            position: relative;
             background-color: red;
         }
 
@@ -31,10 +32,39 @@
 
         @keyframes muda_cor2{
             0%{background-color: red;}
-            25%{background-color: yellow;}
-            50%{background-color: violet;}
-            75%{background-color: teal;}
-            100%{background-color: blue;}
+            20%{background-color: yellow;}
+            40%{background-color: violet;}
+            60%{background-color: teal;}
+            80%{background-color: blue;}
+            100%{background-color: red;}
+        }
+
+        div#movimentar{
+            /*
+            animation-name: mover;
+            animation-duration: 6s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            */
+
+            animation: mover 6s ease-in-out 2s infinite normal;
+        }
+
+        @keyframes mover{
+            0%{
+                left: 0px;
+                top: 0px;
+            }
+            50%{
+                left: 600px;
+                top: 200px;
+            }
+            100%{
+                left: 0px;
+                top: 0px;
+            }
         }
     </style>
 
@@ -42,5 +72,6 @@
 <body>
     <div id="mudar_cor"></div>
     <div id="mudar_cor2"></div>
+    <div id="movimentar"></div>
 </body>
 </html>
