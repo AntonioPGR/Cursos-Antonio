@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-fit</title>
+
+    <style>
+        img{
+            height: 400px;
+            width: 500px;
+        }
+
+        img#fill{
+            object-fit: fill;
+        }
+
+        img#contain{
+            object-fit: contain;
+        }
+
+        img#cover{
+            object-fit: cover;
+        }
+
+        img#none{
+            object-fit: none;
+        }
+
+        img#scale-down{
+            object-fit: scale-down;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Object-fit</h1>
+    <p>Opa, aqui vou testar o parametro object-fit do css, todas imagens serão redimensionadas para: height - 400px e width - 500px. Lembrando,  Veja o resultado abaixo</p>
+    <ul>
+        <li>
+            <p>fill: padrão</p>
+            <img id="fill" src="img/Tree.jpg">
+        </li>
+        <li>
+            <p>contain: redimendionado mas mantem as proporções</p>
+            <img id="contain" src="img/Tree.jpg">
+        </li>
+        <li>
+            <p>cover: a imagem é cortada nas proporções dadas</p>
+            <img id="cover" src="img/Tree.jpg">
+        </li>
+        <li>
+            <p>none: a imagem não é redimensionada</p>
+            <img src="img/Tree.jpg" id="none">
+        </li>
+        <li>
+            <p>scale-down: a imagem é redimensionada para a menor escala do none ou cover</p>
+            <img src="img/Tree.jpg" alt="" id="scale-down">
+        </li>
+    </ul>
+</body>
+</html>

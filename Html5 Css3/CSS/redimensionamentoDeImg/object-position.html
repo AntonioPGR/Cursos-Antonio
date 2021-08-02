@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img.cover{
+            width: 100px;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        img#personalizando{
+            object-position: 0% 0%;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Object-postion</h1>
+    <p>Podemos usar o atributo object-positon quando desejamos escolher a posição da imagem que está, por exemplo, usando um object-fit: cover. veja abaixo</p>
+    <h2>Imagem padrão:</h2>
+    <img src="img/Tree.jpg">
+
+    <h2>Imagem com object-fit: cover</h2>
+    <img src="img/Tree.jpg" class="cover">
+
+    <h2>Personalizando com: object-position: 0% 0%;</h2>
+    <img src="img/Tree.jpg" class="cover" id="personalizando">
+</body>
+</html>
