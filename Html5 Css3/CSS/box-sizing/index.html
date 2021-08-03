@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamanho de caixas</title>
+
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            background-color: red;
+            margin: 10px;
+        }
+
+        div.box-sizing{
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Box-sizing</h1>
+    <p>As duas divs abaixo tem os mesmos atributos, porem uma usa o box-sizing e a outra não</p>
+    <div>
+        essa div não usa o box-sizing: border-box;, por isso o padding aumenta seu tamanha
+    </div>
+    <div class="box-sizing">
+        já essa usa a propriedade, por isso o texto está deslocado de acordo com paddding, mas sem alterar o tamanho
+    </div>
+</body>
+</html>
