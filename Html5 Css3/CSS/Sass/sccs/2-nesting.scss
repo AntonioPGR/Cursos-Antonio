@@ -1,0 +1,23 @@
+$navfontsize: 1.5em;
+$navcolor: rgb(93, 176, 248);
+
+nav{
+    a{
+        color: $navcolor;
+        font-size: $navfontsize;
+
+        text:{
+            align: center;
+            transform: uppercase;
+            decoration: none;
+        }
+    }
+
+    padding: 10px;
+}
+
+p{
+    a{
+        color: rgb(255, 0, 0);
+    }
+}
