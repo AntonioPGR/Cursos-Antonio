@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid conteiner</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .grid-conteiner{
+            background-color: dodgerblue;
+
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: 150px 200px 80px;
+
+            grid-template-areas: 
+                'header header header header'
+                'nav main main aside'
+                'footer footer footer footer';
+        }
+
+        .grid-item{
+            background-color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5em;
+            text-align: center;
+            margin: 10px;
+        }
+
+        header{grid-area: header;}
+        nav{grid-area: nav;}
+        main{grid-area: main;}
+        aside{grid-area: aside;}
+        footer{grid-area: footer;}
+
+        @media screen and (max-width: 900px){
+            .grid-conteiner{
+                grid-template-rows: 150px 80px 200px 80px;
+
+                grid-template-areas: 
+                    'header header header header'
+                    'nav nav nav nav'
+                    'main main main aside'
+                    'footer footer footer footer';
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .grid-conteiner{
+                grid-template-rows: 150px 80px 200px 80px;
+
+                grid-template-areas: 
+                    'header header header header'
+                    'nav nav nav nav'
+                    'main main main main'
+                    'aside aside aside aside'
+                    'footer footer footer footer';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-conteiner">
+        <header class="grid-item">header</header>
+        <nav class="grid-item">navmenu</nav>
+        <main class="grid-item">main</main>
+        <aside class="grid-item">aside</aside>
+        <footer class="grid-item">footer</footer>
+    </div>
+</body>
+</html>
