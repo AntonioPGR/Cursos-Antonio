@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.329);
+    background-color: rgb(207, 207, 207);
+}
+
+h1{
+    margin: 5px 0px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+form{
+    background-color: rgb(177, 177, 177);
+    border: 1px rgb(92, 92, 92) solid;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+    p{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100px auto auto 200px;
+
+        label{
+            display: inline-block;
+            grid-column: 1;
+        }
+
+        input{
+            grid-column: 2/3;
+        }
+
+        label{
+            grid-column: 4;
+        }
+    }
+
+    .required{
+        color: red;
+    }
+}

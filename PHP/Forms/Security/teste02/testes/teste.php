@@ -10,12 +10,15 @@
     <?php
         //echo !ctype_alpha('');
 
-        $email = 'antoninhopgrgmail.com';
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo 'email error';
-        } else {
-            echo 'tudo ok';
-        }
+        // $email = 'antoninhopgrgmail.com';
+        // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        //     echo 'email error';
+        // } else {
+        //     echo 'tudo ok';
+        // }
+
+        // $array = array( array('ola') );
+        // echo count($array);
     ?>
 </body>
 </html>
