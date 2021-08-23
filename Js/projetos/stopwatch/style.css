@@ -1,0 +1,46 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+:root{
+    --cordefundo: #e4b827;
+}
+
+body{
+    background-color: var(--cordefundo);
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    margin: 10px;
+}
+
+div#cronometro{
+    border: 1px solid white;
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: 100px;
+    font-size: 2em;
+}
+
+button{
+    position: relative;
+    left: 20px;
+    background-color: var(--cordefundo);
+    color: white;
+    border: 1px solid white;
+    padding: 15px 20px;
+    margin: 15px;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: white;
+    color: var(--cordefundo);
+    transition: 1s;
+}

@@ -1,0 +1,60 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main{
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.466);
+    width: 380px;
+    margin: 30px auto;
+}
+
+table#tabela{
+    margin: 20px auto;
+
+}
+
+div#visor{
+    position: relative;
+    width: 350px;
+    height: 50px;
+    padding: 25px 5px 10px;
+    border: 1px solid rgb(219, 219, 219);
+    text-align: end;
+    font-size: 2em;
+    top: 10px;
+    margin: auto;
+}
+
+.teclado{
+    height: 80px;
+    width: 90px;
+    border-width: 10px;
+    font-size: 2em;
+    text-align: center;
+}
+
+tr{
+    margin: 10px 0px
+}
+
+.teclado:hover{
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.405);
+}
+
+.operadores{
+    background-color: rgb(204, 204, 204);
+}
+
+#igual{
+    background-color: rgb(96, 96, 252);
+}
+
+#igual:hover{
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.5)
+}
+
+.num, #clear{
+    background-color: rgb(228, 228, 228);
+}
