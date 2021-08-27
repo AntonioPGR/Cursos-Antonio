@@ -14,17 +14,23 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        if(isset($_COOKIE[$name_cookie])){
+            echo 'The atual value of '.$name_cookie.' is '.$valueofcookie;
+        }
+    ?>
+
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         nome: <input type="text" name="nome">
-        <button type="submit">enviar</button>
+        <button type="submit">
+            <?php 
+            if(isset($_COOKIE[$name_cookie])){
+                echo 'Alterar Cookie';
+            } else {
+                echo 'Criar Cookie';
+            }
+            ?>
+        </button>
     </form>
-
-    <? 
-    echo 'ola';
-    echo $_COOKIE[$name_cookie];
-    if(isset($_COOKIE[$name_cookie])){
-        echo 'The atual value of '.$name_cookie.' is '.$valueofcookie;
-    }
-    ?>
 </body>
 </html>
