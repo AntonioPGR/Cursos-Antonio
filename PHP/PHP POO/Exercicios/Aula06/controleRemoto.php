@@ -71,13 +71,13 @@
         }
 
         public function ligarmudo(){
-            if($this->getLigado() && getVolume() > 0){
+            if($this->getLigado() && $this->getVolume() > 0){
                 $this->setVolume(0);
             }
         }
 
         public function desligarMudo(){
-            if($this->getLigado() && getVolume() == 0){
+            if($this->getLigado() && $this->getVolume() == 0){
                 $this->setVolume(50);
             }
         }
@@ -92,7 +92,7 @@
 
         public function pause(){
             if($this->getLigado()){
-                if(getVolume()){
+                if($this->getVolume()){
                     $this->setTocando(false);
                 }
             }
