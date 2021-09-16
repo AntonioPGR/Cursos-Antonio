@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+body{
+    background-color: whitesmoke;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+main#principal{
+    max-width: 800px;
+    min-width: 300px;
+    margin: auto;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+main{
+    background-color: whitesmoke;
+}
+
+h1.tit_principal{
+    margin: 10px 0px;
+    font: 400 2.3em sans-serif;
+}
+
+form{
+    font-family: 'Lora', serif;
+}
+
+input#input_nome{
+    margin-bottom: 10px;
+}
+
+textarea{
+    resize: none;
+}
+
+button#bt_submit{
+    background-color: red;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    margin-top: 10px;
+}
+
+aside{
+    margin-top: 10px;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    min-height: 100px;
+}
+
+li.gray{
+    background-color: lightgray;
+}
+
+li.white{
+    background-color: whitesmoke;
+}
+
+li > p{
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p#nome{
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+p#comentario{
+    margin-top: 5px;
+}
