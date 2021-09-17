@@ -12,10 +12,12 @@ $(()=>{
             type: "post",
             url: "comments.php",
             data: {action:'create', name: name, comment: comment},
-            success: () => {
-                console.log('deu certo')
-                show_comments();
-            }
+        })
+        .done((msg)=>{
+            alert("Sucess")
+        })
+        .fail((jqXHR, textStatus, msg)=>{
+            alert(jqXHR, textStatus, msg)
         });
     });
 
@@ -24,12 +26,15 @@ $(()=>{
         $.ajax({
             type: "post",
             url: "comments.php",
-            data: {action:'select'},
-            dataType: "JSON",
-            success: (response) => {
-                console.log('ola');
-                alert(response);
-            }
-        });
+            data: {action:'select'}, 
+            datatype: 'application/json',
+        })
+        .done((msg)=>{
+            console.log(msg)
+        })
+        .fail((jqXHR, textStatus, msg)=>{
+            alert("fail");
+            alert(jqXHR, textStatus, msg);
+        })
     }
 });

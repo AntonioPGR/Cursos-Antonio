@@ -8,7 +8,7 @@ if(isset($_POST['action']) && !empty($_POST['action'])){
         break;
     }
 } else {
-    echo 'ERROR: action não enviada ou está vazia';
+    echo '';
 }
 
 function create_comment(){
@@ -25,10 +25,28 @@ function create_comment(){
 }
 
 function get_comments(){
+    $comments = array();
+
     $pdo = new PDO("mysql:host=localhost;dbname=comments", 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $qr_sql = $pdo->prepare("SELECT name, comment FROM comments");
     $qr_sql->execute();
-    echo $qr_sql->fetchAll();
+    $results = $qr_sql->fetchAll();
+
+    if(count($results) === 0){
+        echo 0;
+    }else{
+        $c=0;
+        foreach($results as $result){
+            $comments["comment$c"] = array(
+                'nome' => $result['name'],
+                'comentario' => $result['comment'],
+            );
+            $c++;
+        }
+        echo json_encode($comments);
+    }
 }
+
+get_comments();
