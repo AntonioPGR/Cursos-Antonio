@@ -25,8 +25,7 @@ function create_comment(){
 }
 
 function get_comments(){
-    $comments = array();
-
+    // retira os comentarios do banco
     $pdo = new PDO("mysql:host=localhost;dbname=comments", 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
@@ -34,19 +33,21 @@ function get_comments(){
     $qr_sql->execute();
     $results = $qr_sql->fetchAll();
 
+    // verifica se está vazio ou se há comentarios
     if(count($results) === 0){
         echo 0;
     }else{
+        // adiciona os comentarios dentro de $comments
         $c=0;
+        $comments = array();
         foreach($results as $result){
-            $comments["comment$c"] = array(
-                'nome' => $result['name'],
-                'comentario' => $result['comment'],
+            $comentario = array(
+                "nome" => $result['name'],
+                "comentario" => $result['comment'],
             );
-            $c++;
+            array_push($comments, $comentario);
         }
         echo json_encode($comments);
     }
 }
 
-get_comments();
