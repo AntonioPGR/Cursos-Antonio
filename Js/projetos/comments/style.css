@@ -5,8 +5,10 @@ body{
 }
 
 *{
+    font-family: Arial, Helvetica, sans-serif;
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 main#principal{
@@ -34,10 +36,6 @@ input#input_nome{
     margin-bottom: 10px;
 }
 
-textarea{
-    resize: none;
-}
-
 button#bt_submit{
     background-color: red;
     width: 250px;
@@ -47,36 +45,41 @@ button#bt_submit{
     margin-top: 10px;
 }
 
-aside{
-    margin-top: 10px;
+div#comments{
+    max-width: 800px;
+    min-width: 300px;
+    margin: auto;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.300);
 }
 
-ul{
-    list-style: none;
+article.comment{
+    padding: 10px;
 }
 
-li{
-    min-height: 100px;
+.gray{
+    background-color: rgb(196, 196, 196);
 }
 
-li.gray{
-    background-color: lightgray;
+h3.nome{
+    font-size: 1.2em;
+    margin: 5px 0px;
 }
 
-li.white{
-    background-color: whitesmoke;
+p.texto{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    margin: 10px 0;
 }
 
-li > p{
-    margin-left: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+button.delete_button{
+    background-color: rgb(255, 22, 22);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px 1px;
+
+    transition: 0.5s;
 }
 
-p#nome{
-    font-weight: 600;
-    font-size: 1.3em;
-}
-
-p#comentario{
-    margin-top: 5px;
+button.delete_button:hover{
+    box-shadow: 1px 1px 10px #0000006b;
 }

@@ -6,9 +6,9 @@ if(isset($_POST['action']) && !empty($_POST['action'])){
         break;
         case 'select': get_comments();
         break;
+        case 'delete': delete_comments();
+        break;
     }
-} else {
-    echo '';
 }
 
 function create_comment(){
@@ -29,7 +29,7 @@ function get_comments(){
     $pdo = new PDO("mysql:host=localhost;dbname=comments", 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $qr_sql = $pdo->prepare("SELECT name, comment FROM comments");
+    $qr_sql = $pdo->prepare("SELECT id, name, comment FROM comments");
     $qr_sql->execute();
     $results = $qr_sql->fetchAll();
 
@@ -42,6 +42,7 @@ function get_comments(){
         $comments = array();
         foreach($results as $result){
             $comentario = array(
+                "id" => $result['id'],
                 "nome" => $result['name'],
                 "comentario" => $result['comment'],
             );
@@ -49,5 +50,15 @@ function get_comments(){
         }
         echo json_encode($comments);
     }
+}
+
+function delete_comments(){
+    $comment_id = $_POST['id'];
+
+    $pdo = new PDO('mysql:host=localhost;dbname=comments', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $qr_sql = $pdo->prepare("DELETE FROM comments WHERE id = '$comment_id'");
+    $qr_sql->execute();
 }
 
