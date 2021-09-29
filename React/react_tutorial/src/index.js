@@ -4,35 +4,53 @@ import './style.css';
 
 // Classes =====================================
 class Game extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            xIsNext: true,
+            history: [{
+                squares: Array(9).fill(null)
+            }]
+        }
+    }
+
     render(){
+        const history = this.state.history
+        const current_game = this.state.history[this.state.history.length - 1]
+        const status = calculateWinner(current_game.squares) != null?`Winner: ${calculateWinner(current_game.squares)}` : `Next player: ${this.state.xIsNext? "X":"O"}`;
+        console.log(status)
+
         return(
             <div className="game">
-                <Board />
+                <Board squares={current_game.squares} onClick={(i)=>{this.handleClick(i)}} />
                 <div className="gameInfo">
-                    <div>{/* STATUS */}</div>
+                    <div>{status}</div>
                     <div>{/* TODO */}</div>
                 </div>
             </div>
         );
     }
+
+    handleClick(i){
+        const history = this.state.history
+        const current_game = history.squares[history.length - 1]
+
+        console.log(move, squares)
+
+        // verifica se o quadrado esta vazio, se nã otiver nã oexecuta nada
+        if(!current_game[i]  && !calculateWinner(current_game)){
+            current_game[i] = this.state.xIsNext? "X" : "O";
+            move.push(squares);
+            this.setState({squares: squares, xIsNext: !this.state.xIsNext, moves:move});
+            console.log(move, squares);
+        } 
+    }   
 }
 
 class Board extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            squares: Array(9).fill(null),
-            xIsNext: true,
-            moves: Array()
-        }
-    }
-
     render(){
-        const status = calculateWinner(this.state.squares) != null?`Winner: ${calculateWinner(this.state.squares)}` : `Next player: ${this.state.xIsNext? "X":"O"}`;
-
         return(
             <div className="gameBoard">
-                <div className="status">{status}</div>
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
@@ -53,21 +71,8 @@ class Board extends React.Component{
     } 
 
     renderSquare(i){
-        return <Square value={this.state.squares[i]} onClick={()=>{this.handleClick(i)}}/>;
-    }
-
-    handleClick(i){
-        const squares = this.state.squares.slice();
-        const moves = this.state.moves;
-
-        // verifica se o quadrado esta vazio, se nã otiver nã oexecuta nada
-        if(!squares[i]  && !calculateWinner(this.state.squares)){
-            squares[i] = this.state.xIsNext? "X" : "O";
-            moves.push(squares);
-            this.setState({squares: squares, xIsNext: !this.state.xIsNext, moves:moves});
-            console.log(moves);
-        } 
-    }                           
+        return <Square value={this.props.squares[i]} onClick={()=>{this.props.onClick(i)}}/>;
+    }                        
 }
 
 // componentes de função square, são os mais simples de serem escritos, contém apenas um método render e não possuem seu próprio state., util para classes pequenas como esta
