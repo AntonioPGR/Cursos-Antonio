@@ -9,5 +9,5 @@ class MyComponentClass extends React.Component {
 
 ReactDOM.render(
   <MyComponentClass />,
-  document.querySelector('body')
+  document.getElementById('app')
 );
