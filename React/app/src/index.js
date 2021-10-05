@@ -1,13 +1,22 @@
+`use strict`;
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react';
 
-class MyComponentClass extends React.Component {
-  render() {
-    return <h1>Hello world</h1>;
+class Login extends React.Component{
+  constructor(){
+    this.state = {
+      authorized = false
+    }
   }
-};
+
+  render(){
+    const login = (
+      <form></form>
+    )
+  }
+}
 
 ReactDOM.render(
-  <MyComponentClass />,
+  <Login />,
   document.querySelector('body')
-);
+)
