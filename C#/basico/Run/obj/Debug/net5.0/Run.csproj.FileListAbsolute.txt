@@ -1,0 +1,16 @@
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\bin\Debug\net5.0\Run.exe
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\bin\Debug\net5.0\Run.deps.json
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\bin\Debug\net5.0\Run.runtimeconfig.json
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\bin\Debug\net5.0\Run.runtimeconfig.dev.json
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\bin\Debug\net5.0\Run.dll
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\bin\Debug\net5.0\ref\Run.dll
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\bin\Debug\net5.0\Run.pdb
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\obj\Debug\net5.0\Run.csproj.AssemblyReference.cache
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\obj\Debug\net5.0\Run.GeneratedMSBuildEditorConfig.editorconfig
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\obj\Debug\net5.0\Run.AssemblyInfoInputs.cache
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\obj\Debug\net5.0\Run.AssemblyInfo.cs
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\obj\Debug\net5.0\Run.csproj.CoreCompileInputs.cache
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\obj\Debug\net5.0\Run.dll
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\obj\Debug\net5.0\ref\Run.dll
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\obj\Debug\net5.0\Run.pdb
+E:\Github-repositories\Cursos-Antonio\C#\basico\Run\obj\Debug\net5.0\Run.genruntimeconfig.cache
