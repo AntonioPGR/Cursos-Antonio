@@ -1,19 +1,22 @@
 ﻿using System;
 
-namespace Run{
+namespace Array{
     class Program{
         static void Main(string[] args){
             Console.Clear();
 
-            Console.Write("Digite seu nome: ");
-            string username = Console.ReadLine();
+            int[] numbers = new int [10];
+            for (int i = 0; i < 10 ; i++){
+                numbers[i] = i;
+            }
 
-            Console.Write("Digite o ano de seu nascimento: ");
-            int birthyear = Convert.ToInt32(Console.ReadLine());
+            numbers[11] = 10;
 
-            int age = 2021 - birthyear;
+            Console.WriteLine($"O primeiro numero do array numbers é {numbers[0]}");
 
-            Console.WriteLine("Olá " + username + ", Sua idade é " + age + " anos");
+            foreach(int number in numbers){
+                Console.WriteLine(number);
+            }
         }
     }
 }
