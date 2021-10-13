@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
 
-export class SuperMarket extends Component{
-    
+export default class SuperMarket extends Component{
+    render(){
+        return(
+            <main>
+                ola
+            </main>
+        )
+    }
 }
