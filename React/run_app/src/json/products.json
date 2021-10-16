@@ -1,0 +1,37 @@
+{
+    "p1": {
+        "produto": "Óleo",
+        "marca": "Liza",
+        "preco": 7.45,
+        "img": "../img/oleo_de_soja-Liza.jpg",
+        "descricao": "Garrafa de 500ml de Óleo de cozinha da marca liza"
+    },
+    "p2": {
+        "produto": "Arroz",
+        "marca": "Sabor Máximo",
+        "preco": 20.19,
+        "img": "../img/arroz-sabor_maximo.jpg",
+        "descricao": "Pacote de 5kg de Arroz da marca Sabor Máximo" 
+    },
+    "p3": {
+        "produto": "Feijão",
+        "marca": "Kicaldo",
+        "preco": 6.59,
+        "img": "../img/feijao-kicaldo.jpeg",
+        "descricao": "Pacote de 1kg de feijão da marca Kicaldo"
+    },
+    "p4": {
+        "produto": "Chocolate",
+        "marca": "Diamante Negro - Nestle",
+        "preco": 7.50,
+        "img": "../img/chocolate-diamente_negro.jpg",
+        "descricao": "500g de chocolate diamante negro" 
+    },
+    "p5": {
+        "produto": "Monster",
+        "marca": "Mosnter",
+        "preco": 10.59,
+        "img": "../img/monster-monster",
+        "descricao": "473ml de energético monster" 
+    }
+}
