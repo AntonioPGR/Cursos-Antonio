@@ -3,7 +3,20 @@ import React from 'react';
 export default class Products extends React.Component{
     render(){
         return(
-            <h1>Products</h1>
+            <div>
+                <h1>Products</h1>
+                <div>
+                    <ListProducts />
+                </div>
+            </div>
+        )
+    }
+}
+
+class ListProducts extends React.Component{
+    render(){
+        return(
+            
         )
     }
 }

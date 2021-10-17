@@ -5,6 +5,7 @@ import Header from './components/header.js';
 import Footer from './components/footer.js';
 import Products from "./components/products.js";
 import ShopCart from "./components/shopCart.js";
+import NotFound from "./components/notFound.js";
 
 import './css/reset.css';
 
@@ -19,7 +20,7 @@ class SuperMarket extends React.Component{
             case '/carrinho':
                 return <ShopCart />
             default:
-                return <Header />
+                return <NotFound />
         }
     }
 
