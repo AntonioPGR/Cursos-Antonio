@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 
 import Header from './components/header.js';
 import Footer from './components/footer.js';
-import Products from "./components/products.js";
+import DisplayProducts from "./components/products.js";
 import ShopCart from "./components/shopCart.js";
 import NotFound from "./components/notFound.js";
 
@@ -13,10 +13,9 @@ class SuperMarket extends React.Component{
     // Função que decide qual código será renderizado no 'main', isso é decidido baseado na url
     renderMain(){
         const path = window.location.pathname
-        console.log(path)
         switch(path){
             case '/':
-                return <Products />
+                return <DisplayProducts />
             case '/carrinho':
                 return <ShopCart />
             default:
