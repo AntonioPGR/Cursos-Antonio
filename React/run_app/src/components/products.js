@@ -1,22 +1,31 @@
-import React from 'react';
+import {React, useState} from 'react';
 import list_products from '../json/getProducts';
 import '../css/products.css';
 
 export default function DisplayProducts(){ 
-    const products_array = [];
-    for(let i = 0; i < Object.keys(list_products).length; i++){
-        products_array.push(list_products[`p${i}`])
-    };
+    const [productsArray, setProductsArray] = useState([]);
 
-    const handleClick = () => {
+    window.addEventListener('load', ()=>{
+        // adiciona os produtos ao array de produtos
+        for(let i = 0; i < Object.keys(list_products).length; i++){
+            setProductsArray((prev)=>{
+                const new_array = [
+                    ...prev,
+                    list_products[`p${i}`]
+                ]
+                console.log(new_array);
+                return new_array;
+            }) 
+        };
+    })
 
-    }
+    const handleClick = () => {}
 
     return(
         <div>
             <h1 id="products_title">Products</h1>
             <div>
-                {products_array.map((value, index) => <Product onClick={handleClick} key={index} produto={value} />)}
+                {productsArray.map((value, index) => <Product onClick={handleClick} key={index} produto={value} />)}
             </div>
         </div>
     )
