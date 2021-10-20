@@ -1,12 +1,12 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import list_products from '../json/getProducts';
 import '../css/products.css';
 
 export default function DisplayProducts(){ 
     const [productsArray, setProductsArray] = useState([]);
 
+    // adiciona os produtos que estão no JSON ao array de produtos quando a pagina é carregada
     window.addEventListener('load', ()=>{
-        // adiciona os produtos ao array de produtos
         for(let i = 0; i < Object.keys(list_products).length; i++){
             setProductsArray((prev)=>{
                 const new_array = [
