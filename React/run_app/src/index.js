@@ -10,7 +10,7 @@ class VideoDisplay extends React.Component{
         super(props)
 
         this.state = {
-            videoNumber: null,
+            videoNumber: 1,
         }
 
         this.changeVideo = this.changeVideo.bind(this)
@@ -18,7 +18,7 @@ class VideoDisplay extends React.Component{
 
     changeVideo(videoN){
       this.setState({
-          videoNumber: videoN,
+          videoNumber: Number(videoN),
       })
     }
 

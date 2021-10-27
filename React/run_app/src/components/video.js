@@ -1,32 +1,38 @@
 import React from 'react';
 
 export default class Video extends React.Component{
-    constructor(props){
-        super(props);
-        this.loadVideo = this.loadVideo.bind(this)
-    }
-
     loadVideo(){
         const videoNumber = this.props.videoNumber === null? 1: this.props.videoNumber;
+        let videoUrl;
+        console.log(videoNumber);
 
         switch(videoNumber){
             case 1:
-                return './video/Cheeta.mov';
+                videoUrl = "./video/Cheeta.mov"
+                break;
             case 2:
-                return './video/caramujo.mov';
+                videoUrl = "./video/caramujo.mov"
+                break;
             case 3:
-                return './video/cuteCat.mov';
+                videoUrl = "./video/cuteCat.mov"
+                break;
             default:
+                videoUrl = "./video/Cheeta.mov"
                 break;
         }
+
+        return videoUrl;
     }
 
     render(){
+        const url = this.loadVideo();
+        console.log(url);
+
         return(
             <section>
                 <div>
-                    <video width="500px" autoPlay controls>
-                        <source src={this.loadVideo()} />
+                    <video width="500px" controls>
+                        <source src={url} />
                     </video>
                 </div>
             </section>
