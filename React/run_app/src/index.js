@@ -3,14 +3,31 @@ import ReactDOM from 'react-dom';
 
 import Header from './components/header';
 import Options from './components/options';
+import Video from './components/video';
 
 class VideoDisplay extends React.Component{
+    constructor(props){
+        super(props)
+
+        this.state = {
+            videoNumber: null,
+        }
+
+        this.changeVideo = this.changeVideo.bind(this)
+    }
+
+    changeVideo(videoN){
+      this.setState({
+          videoNumber: videoN,
+      })
+    }
+
     render(){
         return(
             <div>
                 <Header />
-                <Options />
-                <Video />
+                <Options onChangeVideo={this.changeVideo} />
+                <Video videoNumber={this.state.videoNumber} />
             </div>
         );
     }
