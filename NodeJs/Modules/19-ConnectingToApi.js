@@ -1,7 +1,9 @@
 console.clear();
 const http = require('http');
 
+// criando servivdor http
 http.createServer((req, res) => {
+   // separando os req por metodo
    switch(req.method){
       case "GET":
          handleGetMethod(req, res);
@@ -12,8 +14,10 @@ http.createServer((req, res) => {
 })
 .listen(8080)
 
+// função que cuida dos request feito a partir do método get
 function handleGetMethod(req, res){
 
+   // opções de request
    const options = {
       hostname: "fakestoreapi.com",
       path: "/products",
@@ -21,6 +25,7 @@ function handleGetMethod(req, res){
       headers: {"Content-Type": "application/json"}
    }
 
+   // criando um req para a api de produtos
    const reqToApi = http.request(options, (response)=>{
       console.log(response.statusCode)
 
@@ -32,5 +37,6 @@ function handleGetMethod(req, res){
       })
    })
 
+   // encerrando request
    reqToApi.end()
 }
