@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Lyrics Songs</title>
 </head>
 <body>
-</body>
-<body>
-    <script src="script.js"></script>
+   <h1 id="title">Lyrics Songs</h1>
+   <p id="description">
+      Insert the name of the artist and the name of the song, then click in search.
+   </p>
+   <form id="searchForm" >
+      <div>
+         <label for="artist">Artist:</label>
+         <input autocomplete="off" id="artistInput" name="artist"type="text">
+      </div>
+      <div>
+         <label for="title">Title:</label>
+         <input autocomplete="off" type="text" name="title" id="titleInput">
+      </div>
+      <div>
+         <input type="submit" value="Search">
+      </div>
+   </form>
+
+   <div id="result">
+
+   </div>
+   
+   <script type="text/javascript" src="songFinder.js"></script>
 </body>
 </html>
