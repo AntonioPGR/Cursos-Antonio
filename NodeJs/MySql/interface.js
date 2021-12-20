@@ -6,6 +6,7 @@ const url = require('url')
 
 http.createServer((req, res) => {
    const method = req.method
+   console.log(method)
    switch (method) {
       case 'GET':
          handleGetMethod(req, res);
@@ -25,12 +26,23 @@ http.createServer((req, res) => {
 async function handleGetMethod(req, res) {
    // recebe a lista de usuários e retorna-a
    const response = await getUsers();
+   res.writeHeader(200, {"Content-Type": "application/json"})
    res.end(JSON.stringify(response))
 }
 
 
-function handlePostMethod(req, res) {
+async function handlePostMethod(req, res) {
+   var body = "";
+   req.on("data", function (chunk) {
+      body += chunk;
+   });
 
+   req.on("end", async () => {
+      res.writeHead(200);
+      const user_data = JSON.parse(body);
+      await createUser(user_data);
+      res.end("user create sucefully")
+   });
 }
 
 
