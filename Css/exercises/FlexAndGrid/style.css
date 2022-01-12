@@ -1,0 +1,49 @@
+
+
+.gridConteiner{
+   background-color: turquoise;
+
+   display: grid;
+   grid-template-columns: 6fr 4fr;
+   grid-template-rows: 50px minmax(300px, 1fr) 40px;
+   grid-template-areas: "head head"
+                        "main aside"
+                        "footer footer";
+   gap: 10px 10px;
+}
+
+header{
+   background-color: orange;
+   grid-area: head;
+}
+
+main{
+   background-color: palegreen;
+   grid-area: main;
+   display: flex;
+   flex-flow: column wrap;
+}
+
+main > div {
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around;
+}
+
+main > div > div{
+   background-color: rgb(3, 241, 55);
+   border: 1px solid red;
+   min-width: 100px;
+   min-height: 100px;
+   margin: 15px;
+}
+
+aside{
+   background-color: powderblue;
+   grid-area: aside;
+}
+
+footer{
+   background-color: salmon;
+   grid-area: footer;
+}

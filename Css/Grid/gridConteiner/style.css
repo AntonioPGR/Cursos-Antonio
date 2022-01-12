@@ -1,0 +1,13 @@
+.gridItem{
+   background-color: rgb(108, 255, 255);
+   border: 1px solid red;
+}
+
+.gridConteiner{
+   background-color: blue;
+   height: 500px;
+
+   display: grid;
+   grid-template: 2fr 4fr 4fr / 2fr 3fr 5fr;
+   gap: 10px 10px;
+}

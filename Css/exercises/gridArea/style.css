@@ -1,0 +1,36 @@
+.gridConteiner{
+   display: grid;
+   grid-template-areas: "a a a b"
+                        "c c c b"
+                        "d d e e";
+   grid-template-columns: repeat(4, 100px);
+   grid-template-rows: repeat(3, 100px);
+   /* grid-template: repeat(3, 100px) / repeat(4, 100px); */
+   gap: 10px 10px;
+}
+
+.gridItem{
+   background-color: darkgrey;
+   border: 1px solid red;
+   min-height: 100px;
+}
+
+.a{
+   grid-area: a;
+}
+
+.b{
+   grid-area: b;
+}
+
+.c{
+   grid-area: c;
+}
+
+.d{
+   grid-area: d;
+}
+
+.e{
+   grid-area: e;
+}

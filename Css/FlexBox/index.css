@@ -1,0 +1,38 @@
+/*
+   justify-content: horizontal
+   align-items: vertical
+   quando flex-direction: row
+   se for column inverte
+
+   align-self: align-items individual
+   flex-flow: sentido wrap
+*/
+
+
+
+.title{
+   text-align: center;
+}
+
+.flex-conteiner{
+   border: 1px solid green;
+   display: flex;
+   flex-flow: column wrap;
+   justify-content: center;
+}
+
+.flex-column{
+   border: 1px black solid;
+
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+}
+
+.flex-item{
+   min-width: 100px;
+   flex-grow: 1;
+   height: 100px;
+   margin: 10px;
+   background-color: aqua;
+}
