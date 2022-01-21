@@ -58,7 +58,6 @@ h1{
 
 
 
-
 .b2{
    padding: 0;
    overflow: hidden;
@@ -73,7 +72,7 @@ h1{
    line-height: 50px;
    color: #fff;
 
-   transition: all 1s ease-in;
+   transition: all 0.5s ease-in;
 }
 
 .b2-text{
@@ -188,3 +187,29 @@ h1{
    transform: scale(1, 1);
 }
 
+
+
+.b5{
+   background-color: rgb(165, 165, 165);
+   position: relative;
+   overflow: hidden;
+}
+
+.b5::after{
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.103);
+
+   top: 0px;
+   left: 0px;
+
+   transform: scale(0.001);
+
+   transition: all linear 0.4s;
+}
+
+.b5:hover::after{
+   transform: scale(1);
+}
