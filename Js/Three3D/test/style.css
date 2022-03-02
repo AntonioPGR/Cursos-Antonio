@@ -1,0 +1,13 @@
+canvas#bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+main{
+  position: absolute;
+}
+
+main > p{
+  color: #fff;
+}
