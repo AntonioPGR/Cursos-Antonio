@@ -4,6 +4,7 @@ function calcular(){
     var  msg = document.getElementById('res')
     var div = document.getElementById('div')
     var selct = document.getElementById('select')
+    
     if(numero.value.length == 0){
         window.alert('Por favor, verifique os dados e tente novamente ')
     }else{

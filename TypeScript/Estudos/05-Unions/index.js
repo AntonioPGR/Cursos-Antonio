@@ -18,8 +18,8 @@ const showThePrice = (price) => {
     }
     console.log(`The price of your superkart is ${formatedPrice}`);
 };
-showThePrice(15);
-showThePrice("15.00");
+// showThePrice(15);
+// showThePrice("15.00")
 // to create a union array ( an array tha supports more than one type ) you can use the following sintax: (type | type)[] . It will create an array with 2 types for you
 const passwords = [
     "batatafrita123",
