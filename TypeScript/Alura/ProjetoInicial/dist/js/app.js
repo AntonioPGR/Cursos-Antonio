@@ -4,7 +4,6 @@ const loginController = new LoginsController();
 // AO CARREGAR O DOCUMENTO -------------------------------------------------
 window.onload = (ev) => {
     ev.preventDefault();
-    console.log('load');
     // gera uma senha nova assim que a pagina carregar
     loginController.gerarSenha();
     // BOTÃO GERAR SENHA --------------------------------

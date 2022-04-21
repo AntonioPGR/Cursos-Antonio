@@ -1,21 +1,30 @@
-export class GeradorSenha{
+type senhaConfiguration = {
+  charactMaisc: string,
+  charactMin: string,
+  numeros: string,
+  simbolos: string
+}
+
+export class Senha{
 
   private _characteresMin : string[];
   private _characteresMaisc : string[];
   private _numeros : string[];
   private _simbolos : string[];
 
-  constructor(charactMin:string, charactMaisc:string, numeros:string, simbolos:string){
+  constructor(senhaConfig : senhaConfiguration, private _inputSenha : HTMLInputElement){
 
-    this._characteresMaisc = charactMaisc.split("");
-    this._characteresMin = charactMin.split("");
-    this._numeros = numeros.split("");
-    this._simbolos = simbolos.split("");
+    this._characteresMaisc = senhaConfig.charactMaisc.split("");
+    this._characteresMin = senhaConfig.charactMin.split("");
+    this._numeros = senhaConfig.numeros.split("");
+    this._simbolos = senhaConfig.simbolos.split("");
 
   }
 
-  // Gera uma senha aleatória para o usuário
-  public gerarSenha() : string{
+  /** 
+   * Gera uma senha aleatória para o usuário
+   */ 
+  public gerarSenha() : void{
     
     let novaSenha = "";
 
@@ -48,7 +57,7 @@ export class GeradorSenha{
 
     }
 
-    return novaSenha;
+    this.inserirSenha(novaSenha);
 
   }
 
@@ -65,6 +74,14 @@ export class GeradorSenha{
 
   }
 
+  /**
+   * insere a senha passada no input da classe
+   * @param senha senha a ser inserida no input
+   */
+  public inserirSenha(senha:string):void{
+    this._inputSenha.value = senha
+  }
+
   // GETTERS ----------
   get characteresMin(){
     return this._characteresMin;
@@ -77,6 +94,9 @@ export class GeradorSenha{
   }
   get simbolos(){
     return this._simbolos;
+  }
+  get inputSenha(){
+    return this._inputSenha;
   }
 
 }

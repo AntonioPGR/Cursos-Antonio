@@ -1,11 +1,14 @@
-export class GeradorSenha {
-    constructor(charactMin, charactMaisc, numeros, simbolos) {
-        this._characteresMaisc = charactMaisc.split("");
-        this._characteresMin = charactMin.split("");
-        this._numeros = numeros.split("");
-        this._simbolos = simbolos.split("");
+export class Senha {
+    constructor(senhaConfig, _inputSenha) {
+        this._inputSenha = _inputSenha;
+        this._characteresMaisc = senhaConfig.charactMaisc.split("");
+        this._characteresMin = senhaConfig.charactMin.split("");
+        this._numeros = senhaConfig.numeros.split("");
+        this._simbolos = senhaConfig.simbolos.split("");
     }
-    // Gera uma senha aleatória para o usuário
+    /**
+     * Gera uma senha aleatória para o usuário
+     */
     gerarSenha() {
         let novaSenha = "";
         // escolhe aleatóriamente uma letra maiuscula, minuscula, numero ou simbolo;
@@ -33,7 +36,7 @@ export class GeradorSenha {
             const novoCharactere = this.characterAleatorio(lettersArray);
             novaSenha += novoCharactere;
         }
-        return novaSenha;
+        this.inserirSenha(novaSenha);
     }
     /**
      * Gera um numero aleatório perante as opções passadas
@@ -44,6 +47,13 @@ export class GeradorSenha {
         const max = opcoes.length;
         const caract = opcoes[Math.floor(Math.random() * max)];
         return caract;
+    }
+    /**
+     * insere a senha passada no input da classe
+     * @param senha senha a ser inserida no input
+     */
+    inserirSenha(senha) {
+        this._inputSenha.value = senha;
     }
     // GETTERS ----------
     get characteresMin() {
@@ -57,5 +67,8 @@ export class GeradorSenha {
     }
     get simbolos() {
         return this._simbolos;
+    }
+    get inputSenha() {
+        return this._inputSenha;
     }
 }

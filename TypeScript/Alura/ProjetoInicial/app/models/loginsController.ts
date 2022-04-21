@@ -1,5 +1,6 @@
 import { Login } from "./login.js";
-import { GeradorSenha } from "./senha.js";
+import { Logins } from "./logins.js";
+import { Senha } from "./senha.js";
 
 // faz o controle da criação de logins, verificando e aprovando ou resusando-o 
 export class LoginsController{
@@ -8,6 +9,7 @@ export class LoginsController{
   private _inputUsuario : HTMLInputElement;
   private _inputCodigoDeRecuperacao : HTMLInputElement;
   private _inputSenha : HTMLInputElement;
+  private logins : Logins;
 
   constructor(){
 
@@ -22,6 +24,7 @@ export class LoginsController{
       this._inputUsuario = inputUser;
       this._inputCodigoDeRecuperacao = inputCdr;
       this._inputSenha = inputPassword;
+      this.logins = new Logins();
 
       this.gerarSenha();  
 
@@ -39,22 +42,22 @@ export class LoginsController{
   public adicionar():void{
 
     // checa se os parâmetros são validos para a efetuação da adição
-    if(!this.informacoesCorretas()){
+    if(!this.informacoesEstaoCorretas()){
       return
     }
 
     const loginInfo = this.informacoesDeLogin;
 
     const login = new Login(loginInfo.usuario, loginInfo.senha,loginInfo.website, loginInfo.codigoDeRecuperacao);
-
-    console.log(login)
-    
+    login.dataDeCriacao.setDate(12)
+    this.logins.adiciona(login);
+    console.log(this.logins.lista())
   }
 
   /**
    * Checa se as informações passadas são validas
    */
-  public informacoesCorretas():boolean{
+  public informacoesEstaoCorretas():boolean{
     return true;
   }
 
@@ -70,6 +73,7 @@ export class LoginsController{
       this.inputUsuario.value = '';
       this.inputWebsite.value = '';
       this.inputWebsite.focus();
+      this.gerarSenha()
 
     }
 
@@ -80,17 +84,6 @@ export class LoginsController{
    */
   public gerarSenha() : void{
 
-    const senha = this.construtorSenha()
-    this.inserirSenha(senha)
-
-  }
-
-  /**
-   * Gera uma nova senha aleatória
-   * @returns senha gerada
-   */
-  public construtorSenha() : string{
-
     // Configurações para a senha gerada
     const senhaConfig = {
       charactMin: "abcdefghijklmnopqrstuvwxyz",
@@ -98,21 +91,11 @@ export class LoginsController{
       numeros: "123456789",
       simbolos: "+-[]{}/?!@#$%&*"
     }
-    const gerador = new GeradorSenha(senhaConfig.charactMin, senhaConfig.charactMaisc, senhaConfig.numeros, senhaConfig.simbolos)
-    return gerador.gerarSenha()
+    const gerador = new Senha(senhaConfig, this.inputSenha)
+    gerador.gerarSenha();
 
   }
 
-  /**
-   * Insere a senha passada no input de senhas
-   */
-  public inserirSenha(senha:string) : void{
-
-    if(this.inputSenha){
-      this.inputSenha.value = senha;
-    }
-
-  }
 
   // GETTERS ----------
   get informacoesDeLogin(){
@@ -123,16 +106,16 @@ export class LoginsController{
       codigoDeRecuperacao: this.inputCodigoDeRecuperacao.value
     }
   }
-  get inputWebsite():HTMLInputElement | null{
+  get inputWebsite():HTMLInputElement{
     return this._inputWebsite;
   }
-  get inputUsuario():HTMLInputElement | null{
+  get inputUsuario():HTMLInputElement{
     return this._inputUsuario
   }
-  get inputSenha():HTMLInputElement | null{
+  get inputSenha():HTMLInputElement{
     return this._inputSenha;
   }
-  get inputCodigoDeRecuperacao():HTMLInputElement | null{
+  get inputCodigoDeRecuperacao():HTMLInputElement{
     return this._inputCodigoDeRecuperacao
   }
 

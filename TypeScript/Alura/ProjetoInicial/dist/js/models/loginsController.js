@@ -1,5 +1,6 @@
 import { Login } from "./login.js";
-import { GeradorSenha } from "./senha.js";
+import { Logins } from "./logins.js";
+import { Senha } from "./senha.js";
 // faz o controle da criação de logins, verificando e aprovando ou resusando-o 
 export class LoginsController {
     constructor() {
@@ -12,6 +13,7 @@ export class LoginsController {
             this._inputUsuario = inputUser;
             this._inputCodigoDeRecuperacao = inputCdr;
             this._inputSenha = inputPassword;
+            this.logins = new Logins();
             this.gerarSenha();
         }
         else {
@@ -23,17 +25,19 @@ export class LoginsController {
      */
     adicionar() {
         // checa se os parâmetros são validos para a efetuação da adição
-        if (!this.informacoesCorretas()) {
+        if (!this.informacoesEstaoCorretas()) {
             return;
         }
         const loginInfo = this.informacoesDeLogin;
         const login = new Login(loginInfo.usuario, loginInfo.senha, loginInfo.website, loginInfo.codigoDeRecuperacao);
-        console.log(login);
+        login.dataDeCriacao.setDate(12);
+        this.logins.adiciona(login);
+        console.log(this.logins.lista());
     }
     /**
      * Checa se as informações passadas são validas
      */
-    informacoesCorretas() {
+    informacoesEstaoCorretas() {
         return true;
     }
     /**
@@ -46,20 +50,13 @@ export class LoginsController {
             this.inputUsuario.value = '';
             this.inputWebsite.value = '';
             this.inputWebsite.focus();
+            this.gerarSenha();
         }
     }
     /**
      * constroi uma nova senha e insere no formulário
      */
     gerarSenha() {
-        const senha = this.construtorSenha();
-        this.inserirSenha(senha);
-    }
-    /**
-     * Gera uma nova senha aleatória
-     * @returns senha gerada
-     */
-    construtorSenha() {
         // Configurações para a senha gerada
         const senhaConfig = {
             charactMin: "abcdefghijklmnopqrstuvwxyz",
@@ -67,16 +64,8 @@ export class LoginsController {
             numeros: "123456789",
             simbolos: "+-[]{}/?!@#$%&*"
         };
-        const gerador = new GeradorSenha(senhaConfig.charactMin, senhaConfig.charactMaisc, senhaConfig.numeros, senhaConfig.simbolos);
-        return gerador.gerarSenha();
-    }
-    /**
-     * Insere a senha passada no input de senhas
-     */
-    inserirSenha(senha) {
-        if (this.inputSenha) {
-            this.inputSenha.value = senha;
-        }
+        const gerador = new Senha(senhaConfig, this.inputSenha);
+        gerador.gerarSenha();
     }
     // GETTERS ----------
     get informacoesDeLogin() {
