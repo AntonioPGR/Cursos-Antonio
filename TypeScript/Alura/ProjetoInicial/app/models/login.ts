@@ -9,9 +9,11 @@ export class Login{
   ){}
   
   get dataDeCriacao(): Date {
-    const clonedData = new Date(this._dataDeCriacao.getDate());
- 
+
+    const data = this._dataDeCriacao.getTime()
+    const clonedData = new Date(data);
     return clonedData;
+    
   }
 
 }

@@ -1,3 +1,5 @@
+import { LoginsView } from "../views/logins-view.js";
+import { MensagensViews } from "../views/mensagens-view.js";
 import { Login } from "./login.js";
 import { Logins } from "./logins.js";
 import { Senha } from "./senha.js";
@@ -14,6 +16,9 @@ export class LoginsController {
             this._inputCodigoDeRecuperacao = inputCdr;
             this._inputSenha = inputPassword;
             this.logins = new Logins();
+            this.loginsView = new LoginsView(document.querySelector("#senhasView"));
+            this.loginsView.update(this.logins);
+            this.msgsView = new MensagensViews(document.querySelector("#mensagemView"));
             this.gerarSenha();
         }
         else {
@@ -25,19 +30,22 @@ export class LoginsController {
      */
     adicionar() {
         // checa se os parâmetros são validos para a efetuação da adição
-        if (!this.informacoesEstaoCorretas()) {
+        if (!this.checkInformacoesEstaoCorretas()) {
             return;
         }
+        // cria um novo login e adiciona ao array de logins
         const loginInfo = this.informacoesDeLogin;
         const login = new Login(loginInfo.usuario, loginInfo.senha, loginInfo.website, loginInfo.codigoDeRecuperacao);
-        login.dataDeCriacao.setDate(12);
         this.logins.adiciona(login);
-        console.log(this.logins.lista());
+        // atualiza a tabela
+        this.loginsView.update(this.logins);
+        // mensagem de adicionado
+        this.msgsView.update("Seu login foi realizado com sucesso!");
     }
     /**
      * Checa se as informações passadas são validas
      */
-    informacoesEstaoCorretas() {
+    checkInformacoesEstaoCorretas() {
         return true;
     }
     /**
