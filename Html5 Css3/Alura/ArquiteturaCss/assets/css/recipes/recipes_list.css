@@ -1,6 +1,11 @@
 .recipes_list{
   display: flex;
   flex-flow: row wrap;
-  
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
   padding: 20px;
+  margin: auto;
+  max-width: clamp(300px, 80vw, 1000px);
 }
