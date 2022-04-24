@@ -1,5 +1,11 @@
-.banner_title{
+.banner_title_container{
   position: absolute;
   top: 40%;
   width: 100%;
+}
+
+.banner_title{
+  color: #eee;;
+  font-size: 4rem;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
 }

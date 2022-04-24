@@ -1,0 +1,21 @@
+.recipe_description_container{
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 60%;
+  border: 1px solid #303030;
+}
+
+.recipe_title{
+  font-size: 1.3rem;
+  max-height: 25px;
+  overflow: hidden;
+}
+
+.recipe_description{
+
+  height: 140px;
+  margin: 10px 0px;
+  overflow: hidden;
+
+}

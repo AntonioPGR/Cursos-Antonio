@@ -1,3 +1,10 @@
+.banner_menu{
+  width: 100%;
+  justify-content: center !important; 
+  position: absolute;
+  bottom: 10px;
+}
+
 .banner_number{
   width: 10px;
   height: 10px;

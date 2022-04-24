@@ -1,0 +1,12 @@
+@import url("./recipe_components/recipe_image.css");
+@import url("./recipe_components/recipe_description.css");
+@import url("./recipe_components/recipe_button.css");
+
+.recipe_container{
+
+  max-width: 300px;
+  height: 400px;
+  background-color: rgb(199, 199, 199);
+  margin: 0 10px 10px;
+
+}

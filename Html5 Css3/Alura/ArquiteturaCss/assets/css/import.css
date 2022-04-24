@@ -14,8 +14,14 @@
 */
 @import url("banner/banner.css");
 @import url("banner/banner_enumaration.css");
-@import url("banner/banner_menu.css");
 @import url("banner/banner_title.css");
+
+/*
+  * RECEITAS
+*/
+@import url("./recipes/recipes_title.css");
+@import url("./recipes/recipes_list.css");
+@import url("./recipes/recipe.css");
 
 /*
   * classes de MENU
@@ -27,4 +33,5 @@
 /*
   * classes de TITULO
 */
-@import url('./titles/titles.css');
+@import url('./titles/title.css');
+@import url('./titles/subtitle.css');
