@@ -1,0 +1,15 @@
+.banner{
+  background-image: url('../../img/banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  margin: auto;
+}
+
+.banner_content{
+  max-width: 700px;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}

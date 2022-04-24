@@ -1,0 +1,31 @@
+.menu_link{
+  color: #909090;
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 10px;
+}
+
+.menu_link#ativo {
+  color: #303030;
+}
+
+.menu_link::after{
+  content: "";
+  width: 90%;
+  transform: scale(0, 1);
+  top: 110%;
+  left: 5%;
+  height: 1px;
+  position: absolute;
+  background-color: #b6b6b6;
+  display: block;
+  transition: transform 0.3s linear;
+}
+
+.menu_link#ativo::after{
+  color: #202020;
+}
+
+.menu_link_container:hover .menu_link::after{
+  transform: scale(1, 1);
+}

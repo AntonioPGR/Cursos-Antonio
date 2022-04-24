@@ -1,0 +1,8 @@
+.menu_links{
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  align-content: space-between;
+  list-style: none;
+}

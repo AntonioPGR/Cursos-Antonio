@@ -1,0 +1,30 @@
+/*
+  * NORMALIZE e RESET
+*/
+@import url('./normalize.css');
+@import url('./reset.css');
+
+/*
+  * HEADER
+*/
+@import url('./header.css');
+
+/*
+  * BANNER
+*/
+@import url("banner/banner.css");
+@import url("banner/banner_enumaration.css");
+@import url("banner/banner_menu.css");
+@import url("banner/banner_title.css");
+
+/*
+  * classes de MENU
+*/
+@import url('./menu/menu_link.css');
+@import url('./menu/menu_links.css');
+@import url('./menu/menu_link_container.css');
+
+/*
+  * classes de TITULO
+*/
+@import url('./titles/titles.css');
