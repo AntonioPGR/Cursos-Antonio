@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 .recipes_list{
   display: flex;
   flex-flow: row wrap;
   
   padding: 20px;
+=======
+.recipe_list{
+  padding: 20px;
+  max-width: clamp(300px, 80vw, 1000px);
+>>>>>>> Stashed changes
 }

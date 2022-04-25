@@ -1,0 +1,8 @@
+.footer_content{
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: end;
+  padding: 10px 10px 0;
+
+}
