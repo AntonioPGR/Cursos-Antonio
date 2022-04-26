@@ -1,18 +1,14 @@
 // import { Logins } from "../models/logins";
 
-import { Logins } from "../models/logins";
+import { Logins } from "../models/logins.js";
+import { View } from "./view.js";
 
-export class LoginsView{
-
-  constructor(
-    private localRenderizacao : HTMLElement,
-  ){}
-  
+export class LoginsView extends View <Logins>{
   /**
    * Cria o template da view dos logins
    * @returns a string contendo o template a ser renderizado
    */
-  public template(models:Logins) : string {
+  protected template(models:Logins) : string {
 
     return `
       <table class="table table-hover table-bordered" >
@@ -36,7 +32,7 @@ export class LoginsView{
   /**
    * Renderiza cada linha da tabela
    */
-   public renderLogins(models:Logins) : string{
+  private renderLogins(models:Logins) : string{
 
     const logins = models.lista();
     return logins.map((login)=>{
@@ -51,19 +47,6 @@ export class LoginsView{
       `
     }).join('');
 
-  }
-
-
-  /**
-   * Renderiza o template atual na tela
-   */
-  public update(logins:Logins) : void{
-
-    const models = logins;
-    const local = this.localRenderizacao;
-    local.innerHTML = "";
-    local.innerHTML = this.template(models);
-    
   }
 
 }

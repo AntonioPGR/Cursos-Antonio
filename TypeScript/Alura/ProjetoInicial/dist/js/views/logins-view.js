@@ -1,8 +1,6 @@
 // import { Logins } from "../models/logins";
-export class LoginsView {
-    constructor(localRenderizacao) {
-        this.localRenderizacao = localRenderizacao;
-    }
+import { View } from "./view.js";
+export class LoginsView extends View {
     /**
      * Cria o template da view dos logins
      * @returns a string contendo o template a ser renderizado
@@ -41,14 +39,5 @@ export class LoginsView {
         </tr>
       `;
         }).join('');
-    }
-    /**
-     * Renderiza o template atual na tela
-     */
-    update(logins) {
-        const models = logins;
-        const local = this.localRenderizacao;
-        local.innerHTML = "";
-        local.innerHTML = this.template(models);
     }
 }

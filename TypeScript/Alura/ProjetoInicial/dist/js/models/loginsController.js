@@ -37,9 +37,14 @@ export class LoginsController {
         const loginInfo = this.informacoesDeLogin;
         const login = new Login(loginInfo.usuario, loginInfo.senha, loginInfo.website, loginInfo.codigoDeRecuperacao);
         this.logins.adiciona(login);
-        // atualiza a tabela
+        // atualiza os elementos dinâmicos da página
+        this.atualizaViews();
+    }
+    /*
+     * Atualiza as views da pagina
+    */
+    atualizaViews() {
         this.loginsView.update(this.logins);
-        // mensagem de adicionado
         this.msgsView.update("Seu login foi realizado com sucesso!");
     }
     /**

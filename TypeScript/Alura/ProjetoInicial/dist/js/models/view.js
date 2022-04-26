@@ -1,2 +1,2 @@
-export class View {
+class View {
 }
