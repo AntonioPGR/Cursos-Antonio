@@ -58,25 +58,35 @@ export class LoginsController{
     const login = new Login(loginInfo.usuario, loginInfo.senha,loginInfo.website, loginInfo.codigoDeRecuperacao);
     this.logins.adiciona(login);
 
-    // atualiza a tabela
-    this.loginsView.update(this.logins)
+    // limpa o formulário de login
+    this.limparFormulario()
 
-    // mensagem de adicionado
-    this.msgsView.update("Seu login foi realizado com sucesso!")
+    // atualiza os elementos dinâmicos da página
+    this.atualizaViews()
     
+  }
+
+  /*
+   * Atualiza as views da pagina
+  */
+  private atualizaViews() : void{
+
+    this.loginsView.update(this.logins)
+    this.msgsView.update("Seu login foi realizado com sucesso!");
+
   }
 
   /**
    * Checa se as informações passadas são validas
    */
-  public checkInformacoesEstaoCorretas():boolean{
+  private checkInformacoesEstaoCorretas():boolean{
     return true;
   }
 
   /**
    * Limpa os dados do formulário
    */
-  public limparFormulario():void{
+  private limparFormulario():void{
 
     if(this.inputCodigoDeRecuperacao && this.inputSenha && this.inputUsuario && this.inputWebsite){
 
@@ -94,7 +104,7 @@ export class LoginsController{
   /**
    * constroi uma nova senha e insere no formulário
    */
-  public gerarSenha() : void{
+  private gerarSenha() : void{
 
     // Configurações para a senha gerada
     const senhaConfig = {

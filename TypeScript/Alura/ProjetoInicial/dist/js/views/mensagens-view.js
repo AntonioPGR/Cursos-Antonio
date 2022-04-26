@@ -1,14 +1,8 @@
-export class MensagensViews {
-    constructor(localRenderizacao) {
-        this.localRenderizacao = localRenderizacao;
-    }
+import { View } from "./view.js";
+export class MensagensViews extends View {
     template(model) {
         return `
       <p class="alert alert-info"> ${model} </p>
     `;
-    }
-    update(model) {
-        const template = this.template(model);
-        this.localRenderizacao.innerHTML = template;
     }
 }

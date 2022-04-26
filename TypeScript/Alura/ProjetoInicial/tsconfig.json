@@ -4,7 +4,7 @@
     "target": "ES6",
     "noEmitOnError": true,
     "noImplicitAny": true,
-    "noUnusedParameters": true,
+    // "noUnusedParameters": true,
     "noUnusedLocals": true,
   },
   "include": ["./app/**/*"]
