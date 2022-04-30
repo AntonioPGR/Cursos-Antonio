@@ -35,8 +35,6 @@ window.onload = (ev) => {
     
       loginController.adicionar()
     
-      loginController.limparFormulario()
-    
     })
   };
 

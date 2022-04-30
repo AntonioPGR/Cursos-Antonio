@@ -63,6 +63,8 @@ export class LoginsController{
 
     // atualiza os elementos dinâmicos da página
     this.atualizaViews()
+
+    this.limparFormulario()
     
   }
 
@@ -104,7 +106,7 @@ export class LoginsController{
   /**
    * constroi uma nova senha e insere no formulário
    */
-  private gerarSenha() : void{
+  public gerarSenha() : void{
 
     // Configurações para a senha gerada
     const senhaConfig = {
