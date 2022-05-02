@@ -23,7 +23,6 @@ window.onload = (ev) => {
         formIncluir.addEventListener('submit', (ev) => {
             ev.preventDefault();
             loginController.adicionar();
-            loginController.limparFormulario();
         });
     }
     ;

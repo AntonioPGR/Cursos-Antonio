@@ -66,7 +66,7 @@ export class Senha{
    * @param opcoes array com as opçoes de escolha
    * @returns um caractere aleatório do array passado
    */
-  public characterAleatorio(opcoes:string[]):string{
+  private characterAleatorio(opcoes:string[]):string{
 
     const max = opcoes.length
     const caract = opcoes[Math.floor(Math.random() * max)]
@@ -78,25 +78,8 @@ export class Senha{
    * insere a senha passada no input da classe
    * @param senha senha a ser inserida no input
    */
-  public inserirSenha(senha:string):void{
+  private inserirSenha(senha:string):void{
     this._inputSenha.value = senha
-  }
-
-  // GETTERS ----------
-  get characteresMin(){
-    return this._characteresMin;
-  }
-  get characteresMaisc(){
-    return this._characteresMaisc;
-  }
-  get numero(){
-    return this._numeros;
-  }
-  get simbolos(){
-    return this._simbolos;
-  }
-  get inputSenha(){
-    return this._inputSenha;
   }
 
 }

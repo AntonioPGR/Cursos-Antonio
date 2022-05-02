@@ -37,8 +37,11 @@ export class LoginsController {
         const loginInfo = this.informacoesDeLogin;
         const login = new Login(loginInfo.usuario, loginInfo.senha, loginInfo.website, loginInfo.codigoDeRecuperacao);
         this.logins.adiciona(login);
+        // limpa o formulário de login
+        this.limparFormulario();
         // atualiza os elementos dinâmicos da página
         this.atualizaViews();
+        this.limparFormulario();
     }
     /*
      * Atualiza as views da pagina
