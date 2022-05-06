@@ -1,10 +1,5 @@
-// import { Logins } from "../models/logins";
 import { View } from "./view.js";
 export class LoginsView extends View {
-    /**
-     * Cria o template da view dos logins
-     * @returns a string contendo o template a ser renderizado
-     */
     template(models) {
         return `
       <table class="table table-hover table-bordered" >
@@ -23,9 +18,6 @@ export class LoginsView extends View {
       </table>
     `;
     }
-    /**
-     * Renderiza cada linha da tabela
-     */
     renderLogins(models) {
         const logins = models.lista();
         return logins.map((login) => {

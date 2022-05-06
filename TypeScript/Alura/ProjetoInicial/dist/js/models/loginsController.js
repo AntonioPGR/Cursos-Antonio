@@ -3,7 +3,6 @@ import { MensagensViews } from "../views/mensagens-view.js";
 import { Login } from "./login.js";
 import { Logins } from "./logins.js";
 import { Senha } from "./senha.js";
-// faz o controle da criação de logins, verificando e aprovando ou resusando-o 
 export class LoginsController {
     constructor() {
         const inputWebsite = document.querySelector("input#website");
@@ -16,49 +15,35 @@ export class LoginsController {
             this._inputCodigoDeRecuperacao = inputCdr;
             this._inputSenha = inputPassword;
             this.logins = new Logins();
-            this.loginsView = new LoginsView(document.querySelector("#senhasView"));
+            const loginsViewRenderLocal = document.querySelector("#senhasView");
+            this.loginsView = new LoginsView(loginsViewRenderLocal);
             this.loginsView.update(this.logins);
-            this.msgsView = new MensagensViews(document.querySelector("#mensagemView"));
+            const msgsViewRenderLocal = document.querySelector("#mensagemView");
+            this.msgsView = new MensagensViews(msgsViewRenderLocal);
             this.gerarSenha();
         }
         else {
             throw new Error("Can't create the controller, input haven't been created yet");
         }
     }
-    /**
-     * Adiciona o login atual do formulário ao banco de dados
-     */
     adicionar() {
-        // checa se os parâmetros são validos para a efetuação da adição
         if (!this.checkInformacoesEstaoCorretas()) {
             return;
         }
-        // cria um novo login e adiciona ao array de logins
         const loginInfo = this.informacoesDeLogin;
         const login = new Login(loginInfo.usuario, loginInfo.senha, loginInfo.website, loginInfo.codigoDeRecuperacao);
         this.logins.adiciona(login);
-        // limpa o formulário de login
         this.limparFormulario();
-        // atualiza os elementos dinâmicos da página
         this.atualizaViews();
         this.limparFormulario();
     }
-    /*
-     * Atualiza as views da pagina
-    */
     atualizaViews() {
         this.loginsView.update(this.logins);
         this.msgsView.update("Seu login foi realizado com sucesso!");
     }
-    /**
-     * Checa se as informações passadas são validas
-     */
     checkInformacoesEstaoCorretas() {
         return true;
     }
-    /**
-     * Limpa os dados do formulário
-     */
     limparFormulario() {
         if (this.inputCodigoDeRecuperacao && this.inputSenha && this.inputUsuario && this.inputWebsite) {
             this.inputCodigoDeRecuperacao.value = '';
@@ -69,11 +54,7 @@ export class LoginsController {
             this.gerarSenha();
         }
     }
-    /**
-     * constroi uma nova senha e insere no formulário
-     */
     gerarSenha() {
-        // Configurações para a senha gerada
         const senhaConfig = {
             charactMin: "abcdefghijklmnopqrstuvwxyz",
             charactMaisc: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -83,7 +64,6 @@ export class LoginsController {
         const gerador = new Senha(senhaConfig, this.inputSenha);
         gerador.gerarSenha();
     }
-    // GETTERS ----------
     get informacoesDeLogin() {
         return {
             website: this.inputWebsite.value,

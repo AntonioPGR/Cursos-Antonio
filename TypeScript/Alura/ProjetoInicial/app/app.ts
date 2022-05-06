@@ -23,6 +23,8 @@ window.onload = (ev) => {
       loginController.gerarSenha()
   
     })
+  } else {
+    throw Error("Não foi possivel Iniciar a aplicação, verifique se o Button de senhas existe")
   };
   
   // LOGIN --------------------------------------------------
@@ -36,6 +38,8 @@ window.onload = (ev) => {
       loginController.adicionar()
     
     })
+  }else {
+    throw Error("Não foi possivel Iniciar a aplicação, verifique se o Form existe")
   };
 
 }

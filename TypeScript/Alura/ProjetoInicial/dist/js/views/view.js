@@ -1,13 +1,17 @@
 export class View {
-    constructor(localRenderizacao) {
+    constructor(localRenderizacao, escapar) {
         this.localRenderizacao = localRenderizacao;
+        this.escapar = false;
+        if (escapar) {
+            this.escapar = escapar;
+        }
     }
-    /*
-      * Atualiza o template atual da tela
-    */
     update(model) {
         this.localRenderizacao.innerHTML = "";
-        const template = this.template(model);
+        let template = this.template(model);
+        if (this.escapar) {
+            template = template.replace(/<script>[\s\S]*?<\/script>/, '');
+        }
         this.localRenderizacao.innerHTML = template;
     }
 }

@@ -1,10 +1,15 @@
 export abstract class View <T>{
 
-  protected localRenderizacao : HTMLElement
+  protected escapar : boolean = false;
 
-  constructor(localRenderizacao : HTMLElement){
+  constructor(
+    protected localRenderizacao : HTMLElement,
+    escapar ?: boolean
+  ){
 
-    this.localRenderizacao = localRenderizacao;
+    if(escapar){
+      this.escapar = escapar
+    }
 
   }
 
@@ -14,7 +19,12 @@ export abstract class View <T>{
   public update(model : T){
 
     this.localRenderizacao.innerHTML = ""
-    const template = this.template(model)
+    let template = this.template(model)
+
+    if(this.escapar){
+      template = template.replace(/<script>[\s\S]*?<\/script>/, '')
+    }
+    
     this.localRenderizacao.innerHTML = template;
 
   }

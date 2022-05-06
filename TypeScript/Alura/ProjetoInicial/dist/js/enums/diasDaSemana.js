@@ -1,4 +1,3 @@
-// sem ultilidade nesse projeto, entretando criação devido ao curso e a testes
 export var DiasDaSemana;
 (function (DiasDaSemana) {
     DiasDaSemana[DiasDaSemana["DOMINGO"] = 0] = "DOMINGO";

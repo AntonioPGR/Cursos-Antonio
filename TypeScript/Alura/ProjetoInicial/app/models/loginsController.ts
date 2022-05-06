@@ -29,9 +29,13 @@ export class LoginsController{
       this._inputCodigoDeRecuperacao = inputCdr;
       this._inputSenha = inputPassword;
       this.logins = new Logins();
-      this.loginsView = new LoginsView(document.querySelector("#senhasView"));
+
+      const loginsViewRenderLocal = document.querySelector("#senhasView") as HTMLInputElement
+      this.loginsView = new LoginsView(loginsViewRenderLocal);
       this.loginsView.update(this.logins)
-      this.msgsView = new MensagensViews(document.querySelector("#mensagemView"))
+
+      const msgsViewRenderLocal = document.querySelector("#mensagemView") as HTMLInputElement
+      this.msgsView = new MensagensViews(msgsViewRenderLocal)
 
       this.gerarSenha();  
 
