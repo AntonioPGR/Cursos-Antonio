@@ -1,3 +1,5 @@
+import { logarTempoDeExecucao } from "../decorators/tempo-de-execucao.js";
+
 export abstract class View <T>{
 
   protected escapar : boolean = false;
@@ -16,6 +18,7 @@ export abstract class View <T>{
   /*
     * Atualiza o template atual da tela 
   */
+ @logarTempoDeExecucao()
   public update(model : T){
 
     this.localRenderizacao.innerHTML = ""

@@ -1,3 +1,4 @@
+import { logarTempoDeExecucao } from "../decorators/tempo-de-execucao.js";
 import { LoginsView } from "../views/logins-view.js";
 import { MensagensViews } from "../views/mensagens-view.js";
 import { Login } from "./login.js";
@@ -50,6 +51,7 @@ export class LoginsController{
   /**
    * Adiciona o login atual do formulário ao banco de dados
    */
+  @logarTempoDeExecucao()
   public adicionar():void{
 
     // checa se os parâmetros são validos para a efetuação da adição
