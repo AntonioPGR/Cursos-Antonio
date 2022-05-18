@@ -1,3 +1,4 @@
+import { inspecionarMetodo } from "../decorators/inspect.js";
 import { logarTempoDeExecucao } from "../decorators/tempo-de-execucao.js";
 import { LoginsView } from "../views/logins-view.js";
 import { MensagensViews } from "../views/mensagens-view.js";
@@ -51,7 +52,7 @@ export class LoginsController{
   /**
    * Adiciona o login atual do formulário ao banco de dados
    */
-  @logarTempoDeExecucao()
+  @logarTempoDeExecucao('s')
   public adicionar():void{
 
     // checa se os parâmetros são validos para a efetuação da adição

@@ -93,5 +93,5 @@ export class LoginsController {
     }
 }
 __decorate([
-    logarTempoDeExecucao()
+    logarTempoDeExecucao('s')
 ], LoginsController.prototype, "adicionar", null);

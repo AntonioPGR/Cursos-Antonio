@@ -1,3 +1,4 @@
+import { inspecionarMetodo } from "../decorators/inspect.js";
 import { logarTempoDeExecucao } from "../decorators/tempo-de-execucao.js";
 
 export abstract class View <T>{
@@ -10,7 +11,7 @@ export abstract class View <T>{
   ){
 
     if(escapar){
-      this.escapar = escapar
+      this.escapar = escapar;
     }
 
   }
@@ -18,6 +19,7 @@ export abstract class View <T>{
   /*
     * Atualiza o template atual da tela 
   */
+ @inspecionarMetodo() 
  @logarTempoDeExecucao()
   public update(model : T){
 

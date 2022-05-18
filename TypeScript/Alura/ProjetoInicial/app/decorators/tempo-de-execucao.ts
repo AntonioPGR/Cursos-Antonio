@@ -1,4 +1,6 @@
-export function logarTempoDeExecucao(){
+type TimeOption = 's' | 'ms'
+
+export function logarTempoDeExecucao(tm:TimeOption="ms"){
 
   return (
     target : any,
@@ -8,10 +10,16 @@ export function logarTempoDeExecucao(){
     const metodoOriginal = descriptor.value;
 
     descriptor.value = function(...args: any[]) {
+
       const t1 = performance.now()
       const resposta = metodoOriginal.apply(this, args)
       const t2 = performance.now()
-      console.log(`${propertyKey}, Tempo de execução: ${(t2 - t1) / 1000 } segundos`)
+
+      let time = (t2 - t1);
+      if(tm == 's'){
+        time /= 1000;
+      }
+      console.log(`${propertyKey}, Tempo de execução: ${time} ${tm}`)
       resposta
     }
 
@@ -19,3 +27,4 @@ export function logarTempoDeExecucao(){
   }
 
 }
+
