@@ -36,6 +36,8 @@ window.onload = (ev) => {
     
       ev.preventDefault()
     
+      console.clear()
+
       loginController.adicionar()
     
     })

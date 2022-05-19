@@ -1,29 +1,24 @@
-export function inspecionarMetodo(){
+import { logarTempoDeExecucao } from "./tempo-de-execucao";
 
-  return (
-    (target : any,
-     propertyKey : string,
-     descriptor : PropertyDescriptor) => {
+export function inspecionarMetodo(target : any, propertyKey : string,descriptor : PropertyDescriptor) {
 
-       const OriginalMethod = descriptor.value;
+  const OriginalMethod = descriptor.value;
 
-       descriptor.value = function (...args : any[]) {
-        
-        console.log("--------")
-        console.log(`Método: ${propertyKey}`)
-        console.log(`parâmetros: ${JSON.stringify(args)}`)
+  descriptor.value = function (...args : any[]) {
+  
+  console.log("--------")
+  console.log(`Método: ${propertyKey}`)
+  console.log(`parâmetros: ${JSON.stringify(args)}`)
 
-        const r1 = OriginalMethod.apply(this, args);
+  const r1 = OriginalMethod.apply(this, args);
 
-        console.log(`-retorno: ${r1}`)
-        console.log("--------")
+  console.log(`-retorno: ${r1}`)
+  console.log("--------")
 
-        return r1
-       }
+  return r1
+  }
 
-       return descriptor
-
-    }
-  )
+  return descriptor
 
 }
+  

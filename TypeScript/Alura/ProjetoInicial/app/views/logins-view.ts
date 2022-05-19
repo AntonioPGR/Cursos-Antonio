@@ -1,5 +1,6 @@
 // import { Logins } from "../models/logins";
 
+import { escapeScript } from "../decorators/escape-script.js";
 import { Logins } from "../models/logins.js";
 import { View } from "./view.js";
 
@@ -8,6 +9,7 @@ export class LoginsView extends View <Logins>{
    * Cria o template da view dos logins
    * @returns a string contendo o template a ser renderizado
    */
+  @escapeScript()
   protected template(models:Logins) : string {
 
     return `

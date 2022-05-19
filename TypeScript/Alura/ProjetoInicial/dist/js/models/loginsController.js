@@ -4,6 +4,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+import { domInjector } from "../decorators/dom-inject.js";
+import { inspecionarMetodo } from "../decorators/inspect.js";
 import { logarTempoDeExecucao } from "../decorators/tempo-de-execucao.js";
 import { LoginsView } from "../views/logins-view.js";
 import { MensagensViews } from "../views/mensagens-view.js";
@@ -12,26 +14,13 @@ import { Logins } from "./logins.js";
 import { Senha } from "./senha.js";
 export class LoginsController {
     constructor() {
-        const inputWebsite = document.querySelector("input#website");
-        const inputUser = document.querySelector("input#usuario");
-        const inputCdr = document.querySelector("input#crd");
-        const inputPassword = document.querySelector("input#senha");
-        if (inputWebsite && inputUser && inputCdr && inputPassword) {
-            this._inputWebsite = inputWebsite;
-            this._inputUsuario = inputUser;
-            this._inputCodigoDeRecuperacao = inputCdr;
-            this._inputSenha = inputPassword;
-            this.logins = new Logins();
-            const loginsViewRenderLocal = document.querySelector("#senhasView");
-            this.loginsView = new LoginsView(loginsViewRenderLocal);
-            this.loginsView.update(this.logins);
-            const msgsViewRenderLocal = document.querySelector("#mensagemView");
-            this.msgsView = new MensagensViews(msgsViewRenderLocal);
-            this.gerarSenha();
-        }
-        else {
-            throw new Error("Can't create the controller, input haven't been created yet");
-        }
+        this.logins = new Logins();
+        const loginsViewRenderLocal = document.querySelector("#senhasView");
+        this.loginsView = new LoginsView(loginsViewRenderLocal);
+        this.loginsView.update(this.logins);
+        const msgsViewRenderLocal = document.querySelector("#mensagemView");
+        this.msgsView = new MensagensViews(msgsViewRenderLocal);
+        this.gerarSenha();
     }
     adicionar() {
         if (!this.checkInformacoesEstaoCorretas()) {
@@ -93,5 +82,18 @@ export class LoginsController {
     }
 }
 __decorate([
-    logarTempoDeExecucao('s')
+    domInjector("input#website")
+], LoginsController.prototype, "_inputWebsite", void 0);
+__decorate([
+    domInjector("input#usuario")
+], LoginsController.prototype, "_inputUsuario", void 0);
+__decorate([
+    domInjector("input#crd")
+], LoginsController.prototype, "_inputCodigoDeRecuperacao", void 0);
+__decorate([
+    domInjector("input#senha")
+], LoginsController.prototype, "_inputSenha", void 0);
+__decorate([
+    logarTempoDeExecucao(),
+    inspecionarMetodo
 ], LoginsController.prototype, "adicionar", null);

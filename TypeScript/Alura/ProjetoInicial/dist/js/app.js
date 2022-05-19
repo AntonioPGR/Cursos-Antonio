@@ -18,6 +18,7 @@ window.onload = (ev) => {
     if (formIncluir) {
         formIncluir.addEventListener('submit', (ev) => {
             ev.preventDefault();
+            console.clear();
             loginController.adicionar();
         });
     }
