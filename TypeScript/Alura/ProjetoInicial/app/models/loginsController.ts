@@ -74,6 +74,21 @@ export class LoginsController{
 
   }
 
+  /*
+   *Busca informações da API
+  */
+ @logarTempoDeExecucao('ms')
+  public buscarInformacoes(){
+
+    const apiUrl : string = "https://localhost:8080/dados" 
+    
+    const request = fetch(apiUrl)
+      .then((res) => res.json())
+      .then((info) => console.log(info))
+      .catch((e) => console.log("Error on request: " + e))
+
+  }
+
   /**
    * Checa se as informações passadas são validas
    */

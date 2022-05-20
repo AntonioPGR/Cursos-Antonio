@@ -14,6 +14,11 @@ window.onload = (ev) => {
         throw Error("Não foi possivel Iniciar a aplicação, verifique se o Button de senhas existe");
     }
     ;
+    const importarBotao = document.querySelector("#botao-importar");
+    importarBotao.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        loginController.buscarInformacoes();
+    });
     const formIncluir = document.querySelector("form#formSenhas");
     if (formIncluir) {
         formIncluir.addEventListener('submit', (ev) => {

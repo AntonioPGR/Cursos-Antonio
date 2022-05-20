@@ -15,7 +15,7 @@ window.onload = (ev) => {
 
   // BOTÃO GERAR SENHA --------------------------------
   // cria o evento de gerar nova senha ao clicar no botão
-  const gerarSenhaBotao : HTMLButtonElement | null = document.querySelector("button#gerarSenha");
+  const gerarSenhaBotao = <HTMLButtonElement>document.querySelector("button#gerarSenha");
   if(gerarSenhaBotao){
     gerarSenhaBotao.addEventListener('click', (ev) => {
   
@@ -27,6 +27,17 @@ window.onload = (ev) => {
   } else {
     throw Error("Não foi possivel Iniciar a aplicação, verifique se o Button de senhas existe")
   };
+
+  // BOTÃO IMPORTAR INFORMAÇÕES --------------------------------
+  const importarBotao = <HTMLButtonElement>document.querySelector("#botao-importar");
+  importarBotao.addEventListener('click', (ev) => {
+
+    ev.preventDefault();
+
+    loginController.buscarInformacoes()
+
+  })
+
   
   // LOGIN --------------------------------------------------
   // evento de incluir a nova senha ao enviar o formulário

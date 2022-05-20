@@ -37,6 +37,13 @@ export class LoginsController {
         this.loginsView.update(this.logins);
         this.msgsView.update("Seu login foi realizado com sucesso!");
     }
+    buscarInformacoes() {
+        const apiUrl = "https://localhost:8080/dados";
+        const request = fetch(apiUrl)
+            .then((res) => res.json())
+            .then((info) => console.log(info))
+            .catch((e) => console.log("Error on request: " + e));
+    }
     checkInformacoesEstaoCorretas() {
         return true;
     }
@@ -97,3 +104,6 @@ __decorate([
     logarTempoDeExecucao(),
     inspecionarMetodo
 ], LoginsController.prototype, "adicionar", null);
+__decorate([
+    logarTempoDeExecucao('ms')
+], LoginsController.prototype, "buscarInformacoes", null);

@@ -1,9 +1,14 @@
 export function domInjector(selector:string){
   return function(target:any, key:string){
 
+    let element : HTMLElement | null;
+
     const getter = function(){
-      const element = document.querySelector(selector) as HTMLElement;
-      console.log(`definida o valor ${element} para ${key}`)
+      if(!element){
+        element = document.querySelector(selector) as HTMLElement;
+        console.log(`definida o valor ${element} para ${key}`)
+      }
+      
       return element;
     }
 
