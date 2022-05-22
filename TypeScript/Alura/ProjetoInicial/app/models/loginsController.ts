@@ -1,6 +1,7 @@
 import { domInjector } from "../decorators/dom-inject.js";
 import { inspecionarMetodo } from "../decorators/inspect.js";
 import { logarTempoDeExecucao } from "../decorators/tempo-de-execucao.js";
+import { LoginServices } from "../services/obterLoginsGravados.js";
 import { LoginsView } from "../views/logins-view.js";
 import { MensagensViews } from "../views/mensagens-view.js";
 import { Login } from "./login.js";
@@ -51,7 +52,7 @@ export class LoginsController{
 
     // cria um novo login e adiciona ao array de logins
     const loginInfo = this.informacoesDeLogin;
-    const login = new Login(loginInfo.usuario, loginInfo.senha,loginInfo.website, loginInfo.codigoDeRecuperacao);
+    const login = new Login(loginInfo.usuario, loginInfo.senha, loginInfo.website, loginInfo.codigoDeRecuperacao);
     this.logins.adiciona(login);
 
     // limpa o formulário de login
@@ -67,10 +68,10 @@ export class LoginsController{
   /*
    * Atualiza as views da pagina
   */
-  private atualizaViews() : void{
+  private atualizaViews(sendMSG=true) : void{
 
     this.loginsView.update(this.logins)
-    this.msgsView.update("Seu login foi realizado com sucesso!");
+    if(sendMSG){this.msgsView.update("Seu login foi realizado com sucesso!");}
 
   }
 
@@ -78,14 +79,15 @@ export class LoginsController{
    *Busca informações da API
   */
  @logarTempoDeExecucao('ms')
-  public buscarInformacoes(){
-
-    const apiUrl : string = "https://localhost:8080/dados" 
+  public async buscarInformacoes(){
     
-    const request = fetch(apiUrl)
-      .then((res) => res.json())
-      .then((info) => console.log(info))
-      .catch((e) => console.log("Error on request: " + e))
+    const logins = await LoginServices.obterLoginsGravados()
+
+    logins.map((login)=>{
+      this.logins.adiciona(login)
+    })
+
+    this.atualizaViews(false)
 
   }
 
