@@ -1,5 +1,6 @@
 import { informacoesDeLogin } from "../interfaces/informacoesDeLogin";
 import { Login } from "../models/login.js";
+import { MensagensViews } from "../views/mensagens-view";
 
 
 export class LoginServices{
@@ -14,6 +15,10 @@ export class LoginServices{
         return logins.map((login) => {
           return LoginServices.converterParaLogin(login)
         })
+      })
+      .catch((e) => {
+        console.log(e)
+        return []
       })
   
   }

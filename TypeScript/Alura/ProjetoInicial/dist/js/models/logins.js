@@ -8,6 +8,9 @@ export class Logins {
     lista() {
         return this.logins;
     }
+    paraTexto() {
+        return JSON.stringify(this.logins, null, 2);
+    }
     get logins() {
         return this._logins;
     }

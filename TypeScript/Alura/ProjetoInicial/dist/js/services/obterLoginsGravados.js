@@ -8,6 +8,10 @@ export class LoginServices {
             return logins.map((login) => {
                 return LoginServices.converterParaLogin(login);
             });
+        })
+            .catch((e) => {
+            console.log(e);
+            return [];
         });
     }
     static converterParaLogin(loginData) {

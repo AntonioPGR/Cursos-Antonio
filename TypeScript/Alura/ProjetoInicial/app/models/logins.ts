@@ -1,6 +1,7 @@
+import { Imprimivel } from "../utils/imprimivel.js";
 import { Login } from "./login.js";
 
-export class Logins{
+export class Logins implements Imprimivel{
 
   private readonly _logins : Login[] = [];
 
@@ -18,6 +19,10 @@ export class Logins{
     
     return this.logins;
 
+  }
+
+  public paraTexto(){
+    return JSON.stringify(this.logins, null, 2)
   }
 
   private get logins() : Array<Login> {

@@ -1,7 +1,3 @@
-import { escapeScript } from "../decorators/escape-script.js";
-import { inspecionarMetodo } from "../decorators/inspect.js";
-import { logarTempoDeExecucao } from "../decorators/tempo-de-execucao.js";
-
 export abstract class View <T>{
 
   constructor(

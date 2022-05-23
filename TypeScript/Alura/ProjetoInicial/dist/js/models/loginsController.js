@@ -17,6 +17,7 @@ import { domInjector } from "../decorators/dom-inject.js";
 import { inspecionarMetodo } from "../decorators/inspect.js";
 import { logarTempoDeExecucao } from "../decorators/tempo-de-execucao.js";
 import { LoginServices } from "../services/obterLoginsGravados.js";
+import { imprimir } from "../utils/imprimir.js";
 import { LoginsView } from "../views/logins-view.js";
 import { MensagensViews } from "../views/mensagens-view.js";
 import { Login } from "./login.js";
@@ -52,9 +53,15 @@ export class LoginsController {
     buscarInformacoes() {
         return __awaiter(this, void 0, void 0, function* () {
             const logins = yield LoginServices.obterLoginsGravados();
+            if (logins.length === 0) {
+                this.msgsView.update('Não foi possivel encontrar nenhum login cadastrado!');
+                return;
+            }
             logins.map((login) => {
                 this.logins.adiciona(login);
             });
+            imprimir(...logins);
+            this.msgsView.update('Logins importados com sucesso!');
             this.atualizaViews(false);
         });
     }
