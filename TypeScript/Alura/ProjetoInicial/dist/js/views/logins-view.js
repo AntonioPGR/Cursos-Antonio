@@ -43,3 +43,4 @@ export class LoginsView extends View {
 __decorate([
     escapeScript()
 ], LoginsView.prototype, "template", null);
+//# sourceMappingURL=logins-view.js.map

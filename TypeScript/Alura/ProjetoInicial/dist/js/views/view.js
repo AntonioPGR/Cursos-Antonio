@@ -8,3 +8,4 @@ export class View {
         this.localRenderizacao.innerHTML = template;
     }
 }
+//# sourceMappingURL=view.js.map

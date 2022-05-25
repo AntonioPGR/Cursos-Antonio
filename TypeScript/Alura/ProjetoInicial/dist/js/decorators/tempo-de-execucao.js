@@ -15,3 +15,4 @@ export function logarTempoDeExecucao(tm = "ms") {
         return descriptor;
     };
 }
+//# sourceMappingURL=tempo-de-execucao.js.map

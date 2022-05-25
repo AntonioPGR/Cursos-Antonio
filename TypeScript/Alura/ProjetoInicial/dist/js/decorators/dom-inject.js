@@ -11,3 +11,4 @@ export function domInjector(selector) {
         Object.defineProperty(target, key, { get: getter });
     };
 }
+//# sourceMappingURL=dom-inject.js.map

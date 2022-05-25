@@ -11,3 +11,4 @@ export function inspecionarMetodo(target, propertyKey, descriptor) {
     };
     return descriptor;
 }
+//# sourceMappingURL=inspect.js.map

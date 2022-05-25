@@ -11,3 +11,4 @@ export function escapeScript() {
         return descriptor;
     };
 }
+//# sourceMappingURL=escape-script.js.map
