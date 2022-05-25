@@ -1,3 +1,4 @@
+import { msgViewType } from "../interfaces/msgViewType.js";
 import { View } from "./view.js";
 
 export class MensagensViews extends View <string>{

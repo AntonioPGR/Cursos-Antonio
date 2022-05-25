@@ -1,0 +1,1 @@
+export type msgViewType = 'info' | 'warning' | 'success'

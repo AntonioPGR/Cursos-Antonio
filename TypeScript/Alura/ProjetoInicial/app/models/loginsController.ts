@@ -42,8 +42,6 @@ export class LoginsController{
   /**
    * Adiciona o login atual do formulário ao banco de dados
    */
-  @logarTempoDeExecucao()
-  @inspecionarMetodo
   public adicionar():void{
 
     // checa se os parâmetros são validos para a efetuação da adição
@@ -79,25 +77,47 @@ export class LoginsController{
   /*
    *Busca informações da API
   */
- @logarTempoDeExecucao('ms')
   public async buscarInformacoes(){
     
-    const logins = await LoginServices.obterLoginsGravados()
+    try{
+      this.msgsView.update("Buscando por logins já registrados!")
 
-    if(logins.length === 0){
-      this.msgsView.update('Não foi possivel encontrar nenhum login cadastrado!')
-      return
+      const logins = await LoginServices.obterLoginsGravados()
+
+      if(logins.length === 0){
+        this.msgsView.update('Não foi possivel encontrar nenhum login cadastrado!')
+        return
+      }
+
+      logins.map((novoLogin)=>{
+
+        let ehIgual = false;
+        this.logins.lista().map((loginJaRegistrado)=>{
+
+          if(novoLogin.ehIgual(loginJaRegistrado)){
+            ehIgual = true
+            console.log(`${novoLogin} == ${loginJaRegistrado}`)
+          }
+
+        })
+
+        if(!ehIgual){
+          this.logins.adiciona(novoLogin);
+        }
+
+      })
+
+      imprimir(...logins)
+
+      this.msgsView.update('Logins importados com sucesso!')
+
+      this.atualizaViews(false) 
+
+    } catch {
+
+      this.msgsView.update("Não foi possivel encontrar nenhum login!")
+
     }
-
-    logins.map((login)=>{
-      this.logins.adiciona(login)
-    })
-
-    imprimir(...logins)
-
-    this.msgsView.update('Logins importados com sucesso!')
-
-    this.atualizaViews(false)
 
   }
 

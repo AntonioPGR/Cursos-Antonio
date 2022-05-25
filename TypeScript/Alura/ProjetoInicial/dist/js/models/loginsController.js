@@ -14,8 +14,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { domInjector } from "../decorators/dom-inject.js";
-import { inspecionarMetodo } from "../decorators/inspect.js";
-import { logarTempoDeExecucao } from "../decorators/tempo-de-execucao.js";
 import { LoginServices } from "../services/obterLoginsGravados.js";
 import { imprimir } from "../utils/imprimir.js";
 import { LoginsView } from "../views/logins-view.js";
@@ -52,17 +50,32 @@ export class LoginsController {
     }
     buscarInformacoes() {
         return __awaiter(this, void 0, void 0, function* () {
-            const logins = yield LoginServices.obterLoginsGravados();
-            if (logins.length === 0) {
-                this.msgsView.update('Não foi possivel encontrar nenhum login cadastrado!');
-                return;
+            try {
+                this.msgsView.update("Buscando por logins já registrados!");
+                const logins = yield LoginServices.obterLoginsGravados();
+                if (logins.length === 0) {
+                    this.msgsView.update('Não foi possivel encontrar nenhum login cadastrado!');
+                    return;
+                }
+                logins.map((novoLogin) => {
+                    let ehIgual = false;
+                    this.logins.lista().map((loginJaRegistrado) => {
+                        if (novoLogin.ehIgual(loginJaRegistrado)) {
+                            ehIgual = true;
+                            console.log(`${novoLogin} == ${loginJaRegistrado}`);
+                        }
+                    });
+                    if (!ehIgual) {
+                        this.logins.adiciona(novoLogin);
+                    }
+                });
+                imprimir(...logins);
+                this.msgsView.update('Logins importados com sucesso!');
+                this.atualizaViews(false);
             }
-            logins.map((login) => {
-                this.logins.adiciona(login);
-            });
-            imprimir(...logins);
-            this.msgsView.update('Logins importados com sucesso!');
-            this.atualizaViews(false);
+            catch (_a) {
+                this.msgsView.update("Não foi possivel encontrar nenhum login!");
+            }
         });
     }
     checkInformacoesEstaoCorretas() {
@@ -121,10 +134,3 @@ __decorate([
 __decorate([
     domInjector("input#senha")
 ], LoginsController.prototype, "_inputSenha", void 0);
-__decorate([
-    logarTempoDeExecucao(),
-    inspecionarMetodo
-], LoginsController.prototype, "adicionar", null);
-__decorate([
-    logarTempoDeExecucao('ms')
-], LoginsController.prototype, "buscarInformacoes", null);

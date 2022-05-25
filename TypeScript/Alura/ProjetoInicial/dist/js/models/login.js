@@ -15,6 +15,9 @@ Cdr: ${this.codigoDeRecuperacao}
 Data: ${this.dataDeCriacao}
     `;
     }
+    ehIgual(Login2) {
+        return JSON.stringify(this) === JSON.stringify(Login2);
+    }
     get dataDeCriacao() {
         const data = this._dataDeCriacao.getTime();
         const clonedData = new Date(data);
