@@ -1,8 +1,22 @@
 import { Button } from "./button";
 
-interface FormProps {}
+interface FormProps {
+  onSubmit: (subject:string, time:string) => void;
+}
 
-export function Formulario(props: FormProps) {
+export function Form(props: FormProps) {
+
+  const handleSubmitEvent = () => {
+    
+    const subject_input = document.querySelector("#study-subject-input") as HTMLInputElement;
+    const subject = subject_input.value;
+    const time_input = document.querySelector("#study-time-input") as HTMLInputElement;
+    const time = time_input.value;
+
+    props.onSubmit(subject, time);
+
+  }
+
   return(
     <form>
       <div className="form-element" id="study-subject-input-content">
@@ -30,7 +44,7 @@ export function Formulario(props: FormProps) {
         />
       </div>
 
-      <Button text="Adicionar" />
+      <Button text="Adicionar" onClickEvent={() => handleSubmitEvent()} />
 
     </form>
   )

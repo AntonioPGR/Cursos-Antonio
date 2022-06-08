@@ -1,12 +1,18 @@
 interface ButtonProps {
-  text: string
+  text: string,
+  onClickEvent: () => void;
 }
 
 export function Button(props: ButtonProps) {
 
+  const handleClick = (ev:any) => {
+    ev.preventDefault();
+    props.onClickEvent();
+  }
+
   return (
-    <button>
-      <span> {props.text} </span>
+    <button onClick={(e) => handleClick(e)}>
+      {props.text} 
     </button> 
   )
 
