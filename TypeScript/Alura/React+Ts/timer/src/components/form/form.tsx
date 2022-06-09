@@ -1,4 +1,5 @@
-import { Button } from "./button";
+import { Button } from "../button/button";
+import style from './form.module.scss';
 
 interface FormProps {
   onSubmit: (subject:string, time:string) => void;
@@ -19,11 +20,12 @@ export function Form(props: FormProps) {
 
   return(
     <form>
-      <div className="form-element" id="study-subject-input-content">
-        <label htmlFor="study-subject-input">
+      <div className={style.formSection} id="study-subject-input-content">
+        <label className={style.question} htmlFor="study-subject-input">
           Adicionar um novo estudo
         </label>
         <input 
+          className={style.formInput}
           type="text" 
           name="study-subject" 
           id="study-subject-input" 
@@ -31,13 +33,15 @@ export function Form(props: FormProps) {
           required
         />
       </div>
-      <div className="form-element" id="study-time-input-content">
-        <label htmlFor="study-time-input">tempo</label>
+      <div className={style.formSection} id="study-time-input-content">
+        <label className={style.question} htmlFor="study-time-input">Tempo de estudo</label>
         <input 
+          className={style.formInput}
           type="time" 
           step="1"
           min="00:00:00"
           max="02:00:00"
+          value="00:00:00"
           name="study-time" 
           id="study-time-input" 
           required
