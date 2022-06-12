@@ -1,8 +1,19 @@
+.container{
+  grid-column: 1 / 2;
+}
+
+.inputsContainer{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  justify-items: center;
+}
+
 .formSection{
 
   margin-bottom: 20px;
 
-  * {
+  > * {
     display: block;
   }
 

@@ -2,17 +2,23 @@ import React from "react";
 
 // Components Import
 import { Form } from "../components/form/form";
-import { TaskProps } from "../components/task/task";
 import { TaskList } from "../components/taskList/taskList";
+import { TimerContainer } from "../components/timerContainer/timerContainer";
+import { Task } from "../models/task";
 import style from './app.module.scss';
 
 // Returns the app Component
 export function App() {
 
-  const [tasks, setTasks] = React.useState<TaskProps[]>([]);
-
-  const onAddTaskSubmit = (subject:string, time:string) => {
-    setTasks([...tasks, {name: subject, time: time}]);
+  // Task List State
+  const [tasks, setTasks] = React.useState<Task[]>([]);
+  
+  /**
+   * add a new task to the task list
+   * @param newTask the new task to be added to the list
+   */
+  const onAddTaskSubmit = (newTask:Task) => {
+    setTasks([...tasks, newTask]);
   }
 
   return (
@@ -20,6 +26,7 @@ export function App() {
 
       <Form onSubmit={onAddTaskSubmit}/>
       <TaskList tasks={tasks}/>
+      <TimerContainer timing="00:00"/>
 
     </main>
   );
