@@ -98,9 +98,11 @@ export function Form({onSubmit}: FormProps) {
         </div>
       </div>
 
-      <Button onClickEvent={() => handleSubmitEvent()} >
-        Adicionar
-      </ Button>
+      <div className={style.button}> 
+        <Button onClickEvent={() => handleSubmitEvent()} >
+          Adicionar
+        </ Button>
+      </div>
 
     </form>
   )
