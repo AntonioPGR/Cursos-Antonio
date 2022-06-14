@@ -5,14 +5,16 @@ export class Task{
   private id: string
   private selected: boolean
   private completed: boolean
+  private time: number
 
   constructor(
     private subject: string,
-    private time: string,
+    private formatedTime: string,
   ){
-    this.id = uuidv4()
-    this.selected = false
-    this.completed = this.time === "00:00:00"? true:false
+    this.id = uuidv4();
+    this.selected = false;
+    this.time = Task.timeToNumber(formatedTime);
+    this.completed = this.time === 0? true:false;
   }
 
   public select(){
@@ -28,9 +30,22 @@ export class Task{
 
   }
 
+  /* STATIC */
+  static timeToNumber(time: string){
+    let timeArray = time.split(':');
+    let hours = Number(timeArray[0]);
+    let minutes = Number(timeArray[1]);
+    let seconds = Number(timeArray[2]);
+
+    return hours * 3600 + minutes * 60 + seconds;
+  }
+
   /* GETTERS */
-  getTime(){
+  getSeconds(){
     return this.time
+  }
+  getFormatedTime(){
+    return this.formatedTime
   }
   getSubject(){
     return this.subject

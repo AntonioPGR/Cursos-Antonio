@@ -1,5 +1,4 @@
 .container{
-  background-color: #7f6cd580;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 15px;
@@ -8,6 +7,14 @@
     cursor: pointer;
   }
 
+}
+
+.unselected{
+  background-color: #7f6cd580;
+}
+
+.selected{
+  background-color: #3f3270a8;
 }
 
 .title{

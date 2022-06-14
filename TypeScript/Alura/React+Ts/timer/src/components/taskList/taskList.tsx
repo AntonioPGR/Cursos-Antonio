@@ -4,18 +4,13 @@ import style from './taskList.module.scss'
 
 export interface TaskListProps {
   tasks?: Task[];
+  onSelectTask: (selectedTask: Task) => void;
 }
-
-const presetTasks : Task[] = [new Task("Task1", "00:10:00"), new Task("Task2", "00:20:00"), new Task("Task3", "00:30:00")];
 
 export function TaskList(props: TaskListProps){
 
   // Task List State
-  const tasks = props.tasks? [...presetTasks, ...props.tasks] : [...presetTasks];
-
-  const handleTaskSelection = (newSelectedTask:Task) => {
-    console.log(newSelectedTask);
-  }
+  const tasks = props.tasks || []
 
   /**
    * render the task list to be showed in de DOM
@@ -27,7 +22,7 @@ export function TaskList(props: TaskListProps){
       return <p className={style.warning}>Nenhuma tarefa agendada, que tal adicionar uma?</p>
     }
 
-    return tasks.map((task, index) => <TaskComponent onSelect={handleTaskSelection} key={index} task={task} />)
+    return tasks.map((task) => <TaskComponent onSelect={props.onSelectTask} key={task.getId()} task={task} />)
   }
 
   return (
