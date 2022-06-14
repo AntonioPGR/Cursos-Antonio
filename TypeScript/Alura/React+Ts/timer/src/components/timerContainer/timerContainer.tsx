@@ -1,25 +1,26 @@
 import { Button } from "../button/button";
 import style from "./timerContainer.module.scss";
 import { Timer } from "../timer/timer";
+import { Time } from "../../utils/time";
 
 interface TimerProps{
-  timing: string;
+  timing: number,
+  onStartTask: () => void,
 }
 
-export function TimerContainer({timing}: TimerProps){
+export function TimerContainer({timing, onStartTask}: TimerProps){
 
-  const timerCount = timing.split("");
+  const formatedTime = Time.secondsToTime(timing);
+  console.log(formatedTime);
 
   return(
     <div className={style.container}>
       
       <p>escolha um card e inicie o cronômetro</p>
+      
+      <Timer timerCount={formatedTime.split(":")} />
 
-      <div className={style.timer}>
-          <Timer timerCount={timerCount} />
-      </div>
-
-      <Button onClickEvent={() => null}>
+      <Button onClickEvent={onStartTask}>
         começar
       </Button>
 

@@ -1,4 +1,5 @@
 import { v4 as uuidv4} from 'uuid';
+import { Time } from '../utils/time';
 
 export class Task{
 
@@ -9,11 +10,11 @@ export class Task{
 
   constructor(
     private subject: string,
-    private formatedTime: string,
+    formatedTime: string,
   ){
     this.id = uuidv4();
     this.selected = false;
-    this.time = Task.timeToNumber(formatedTime);
+    this.time = Time.timeToSeconds(formatedTime);
     this.completed = this.time === 0? true:false;
   }
 
@@ -27,25 +28,19 @@ export class Task{
     this.completed = true
   }
   public decreaseTime(){
-
+    this.time--
+    if(this.time === 0){
+      this.complete()
+    }
   }
 
-  /* STATIC */
-  static timeToNumber(time: string){
-    let timeArray = time.split(':');
-    let hours = Number(timeArray[0]);
-    let minutes = Number(timeArray[1]);
-    let seconds = Number(timeArray[2]);
-
-    return hours * 3600 + minutes * 60 + seconds;
-  }
 
   /* GETTERS */
   getSeconds(){
     return this.time
   }
   getFormatedTime(){
-    return this.formatedTime
+    return Time.secondsToTime(this.time);
   }
   getSubject(){
     return this.subject

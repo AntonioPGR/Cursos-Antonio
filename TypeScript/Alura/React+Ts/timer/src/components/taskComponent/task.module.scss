@@ -17,6 +17,12 @@
   background-color: #3f3270a8;
 }
 
+.completed{
+  background-color: #4b9151a8;
+  text-decoration: line-through;
+  cursor: no-drop;
+}
+
 .title{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5em;

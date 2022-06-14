@@ -9,13 +9,16 @@ interface TaskProps {
 export function TaskComponent({task, onSelect}: TaskProps) {
 
   const isSelected = task.getSelected();
-  const styleClass = isSelected ? style.selected : style.unselected;
+  let styleClass = isSelected ? style.selected : style.unselected;
+  styleClass = task.getCompleted() ? style.completed : styleClass;
 
   /**
    * Calls the onSelect event when the task is clicked
    */
   const handleClick = () => {
-    onSelect(task);
+    if(!task.getCompleted()){
+      onSelect(task);
+    }
   }
 
   return (
