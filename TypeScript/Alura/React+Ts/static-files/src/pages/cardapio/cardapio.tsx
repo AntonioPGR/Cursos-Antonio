@@ -1,12 +1,14 @@
 import styles from "./cardapio.module.scss";
-import Logo from "assets/logo.png";
+
+// Components
+import { Header } from "components/header";
+import { Footer } from "components/footer";
 
 export function Cardapio(){
   return (
       <>
-        <div className={styles.dark} >
-          <img src={Logo} alt="Logo da pichau" />
-        </div>
+        <Header />
+        <Footer />
       </>
   );
 }

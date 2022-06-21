@@ -5,6 +5,9 @@ import { createRoot } from "react-dom/client";
 // COMPONENTS IMPORT
 import { Cardapio } from "./pages/cardapio/cardapio";
 
+// STYLE
+import "./index.css";
+
 function App(){
   return (
     <StrictMode>
