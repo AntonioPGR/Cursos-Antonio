@@ -6,7 +6,8 @@ import { createRoot } from "react-dom/client";
 import { Cardapio } from "./pages/cardapio/cardapio";
 
 // STYLE
-import "./index.css";
+import "./index.scss";
+import "normalize.css"
 
 function App(){
   return (

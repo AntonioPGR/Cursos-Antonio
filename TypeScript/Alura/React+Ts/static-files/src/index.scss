@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import "assets/style/variables";
+
+/* BODY STYLE */
+body{
+  background-color: $bgColor;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: $fontNoto;
+}
