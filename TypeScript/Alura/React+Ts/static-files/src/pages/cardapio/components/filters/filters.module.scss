@@ -1,0 +1,43 @@
+@import "assets/style/_variables.scss";
+
+.container{
+  margin: 20px;
+}
+
+.list{
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  margin: auto;
+}
+
+.filter{
+  padding: 10px;
+  background-color: $bgColorLight;
+  margin: 0 10px 10px 0;
+}
+
+.checkBox{
+  display: none;
+}
+
+.checkBox + .name::before{
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  position: relative;
+  background-color: $bgColorSemiLight;
+  border: 3px solid $bgColorSemiLight;
+  margin-right: 5px;
+}
+
+.checkBox:checked + .name::before{
+  background-color: $white;
+}
+
+.name{
+  text-transform: capitalize;
+}

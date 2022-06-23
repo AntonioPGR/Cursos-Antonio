@@ -17,7 +17,6 @@ export function SearchBar({ onChange } : PropsSearchBar){
 
     if(searchInput.current){
       onChange(searchInput.current.value)
-      console.log(searchInput.current.value)
     }
 
   }
