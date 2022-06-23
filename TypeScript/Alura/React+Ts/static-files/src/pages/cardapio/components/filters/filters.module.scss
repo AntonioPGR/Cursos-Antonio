@@ -13,31 +13,26 @@
 }
 
 .filter{
-  padding: 10px;
   background-color: $bgColorLight;
   margin: 0 10px 10px 0;
+  width: 200px;
+  border-radius: 5px;
 }
 
 .checkBox{
   display: none;
 }
 
-.checkBox + .name::before{
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-  position: relative;
-  background-color: $bgColorSemiLight;
-  border: 3px solid $bgColorSemiLight;
-  margin-right: 5px;
-}
-
-.checkBox:checked + .name::before{
-  background-color: $white;
+.checkBox:checked + .name{
+  background-color: $red;
 }
 
 .name{
   text-transform: capitalize;
+  color: $darkText;
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  user-select: none;
 }

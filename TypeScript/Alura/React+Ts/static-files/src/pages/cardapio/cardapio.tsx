@@ -10,7 +10,12 @@ import { Filter } from "modules/filters";
 export function Cardapio(){
   // armazena a string de busca inserida na barra de pesquisa
   const [searchQuery, setSearchQuery] = useState<string>("")
-  const [currentFilter, setCurrentFilter] = useState<Filter>()
+  const [currentFilter, setCurrentFilter] = useState<Filter | undefined>(undefined)
+
+  useEffect(() => {
+    console.log(currentFilter?.name)
+  }, 
+  [currentFilter])
 
   return (
       <>
