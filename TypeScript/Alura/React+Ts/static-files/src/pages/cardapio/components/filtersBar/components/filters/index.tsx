@@ -1,11 +1,13 @@
 import preSetFilters from "assets/json/filters.json"
-import styles from "./filters.module.scss";
 import { Filter } from "modules/filters"
 import { ChangeEvent } from "react";
 
+import styles from "./filters.module.scss";
+import filterStyles from "../../filtersBar.module.scss"
+
 // OBS: para o estilo usei o checkbox, porém existe um módulo chamado ClassNames que pode ser usado para concaternar classes do css modules
 
-interface PropsFilters{
+export interface PropsFilters{
   onSelect: (filter:Filter | undefined) => void,
 }
 
@@ -47,7 +49,7 @@ export function Filters({ onSelect }:PropsFilters){
   const renderFilters = () => {
     return filters.map((filter, index) => {
       return(
-        <li key={index} className={styles.filter} >
+        <li key={index} className={`${filterStyles.filterElement} ${styles.filter}`} >
           <input 
             type="checkbox" 
             name="filter" 
@@ -65,10 +67,8 @@ export function Filters({ onSelect }:PropsFilters){
   }
 
   return (
-    <nav className={styles.container} >
-      <ul className={styles.list} >
-        {renderFilters()}
-      </ul>
-    </nav>
+    <ul className={styles.list} >
+      {renderFilters()}
+    </ul>
   )
 }
