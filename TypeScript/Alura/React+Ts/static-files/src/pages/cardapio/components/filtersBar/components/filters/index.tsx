@@ -4,6 +4,7 @@ import { ChangeEvent } from "react";
 
 import styles from "./filters.module.scss";
 import filterStyles from "../../filtersBar.module.scss"
+import classNames from "classnames";
 
 // OBS: para o estilo usei o checkbox, porém existe um módulo chamado ClassNames que pode ser usado para concaternar classes do css modules
 
@@ -49,16 +50,20 @@ export function Filters({ onSelect }:PropsFilters){
   const renderFilters = () => {
     return filters.map((filter, index) => {
       return(
-        <li key={index} className={`${filterStyles.filterElement} ${styles.filter}`} >
+        <li key={index} className={ classNames({
+          [styles.filter]: true,
+          [filterStyles.filterElement]: true,
+        }
+        )} >
           <input 
             type="checkbox" 
             name="filter" 
-            id={`${filter.id}`} 
+            id={String(filter.id)} 
             className={styles.checkBox} 
             onChange={(ev) => handleSelect(ev, filter)}
           />
           <label 
-            htmlFor={`${filter.id}`} 
+            htmlFor={String(filter.id)} 
             className={styles.name}> {filter.name} 
           </label>
         </li>

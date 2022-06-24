@@ -3,6 +3,7 @@ import filterStyles from "../../filtersBar.module.scss";
 import orders from "assets/json/orders.json";
 import { OrderTag } from "modules/orderBy"
 import { useEffect } from "react";
+import classNames from "classnames";
 
 export interface PropsOrderBy{
   onSelect: (tag:OrderTag) => void;
@@ -32,12 +33,17 @@ export function OrderBy({onSelect}:PropsOrderBy){
 
 
   return(
-    <div className={`${filterStyles.filterElement} ${styles.container}`}>
+    <div className={
+      classNames({
+        [filterStyles.filterElement]: true,
+        [styles.container]: true
+      })
+    }>
       <label className={styles.name} htmlFor="orderBy">Organizar por:</label>
       <select className={styles.select} name="orderBy" onChange={(ev) => handleChange(ev)}>
         {
           options.map((value, index) => {
-            return <option className={styles.option} key={index} value={`${value.id}`} > {value.name} </option>
+            return <option className={styles.option} key={index} value={String(value.id)} > {value.name} </option>
           })
         }
       </select>
