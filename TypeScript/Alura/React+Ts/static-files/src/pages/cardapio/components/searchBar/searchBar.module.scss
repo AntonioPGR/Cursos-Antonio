@@ -2,7 +2,7 @@
 
 .container{
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
 
   justify-content: space-between;
   justify-items: center;
@@ -21,7 +21,7 @@
 .input{
   border: none;
   height: 40px;
-  width: calc(100vw - 95px);
+  width: calc(100vw - 110px);
 }
 
 .input, .input::placeholder{

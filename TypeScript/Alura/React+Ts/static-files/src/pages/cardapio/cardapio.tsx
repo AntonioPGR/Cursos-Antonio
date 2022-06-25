@@ -4,9 +4,10 @@ import { SearchBar } from "./components/searchBar";
 import { FiltersBar } from "./components/filtersBar";
 
 // Imports
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Filter } from "modules/filters";
 import { OrderTag } from "modules/orderBy";
+import { ProductsList } from "./components/products";
 
 export function Cardapio(){
   // armazena a string de busca inserida na barra de pesquisa
@@ -23,6 +24,7 @@ export function Cardapio(){
         <Header />
         <SearchBar onChange={setSearchQuery}/>
         <FiltersBar onSelectFilter={setCurrentFilter} onChangeOrderBy={setOrder} />
+        <ProductsList />
       </>
   );
 }
