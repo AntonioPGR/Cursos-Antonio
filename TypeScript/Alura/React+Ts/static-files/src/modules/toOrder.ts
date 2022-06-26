@@ -6,18 +6,21 @@ export class ToOrderProducts{
     const arrayCopy = [...array]
 
     let orderFunction;
-    if(order === 0){
-      orderFunction = ToOrderProducts.random
-    }
-    else if(order === 1){
-      orderFunction = ToOrderProducts.higherPrice
-    }
-    else if(order === 2){
-      orderFunction = ToOrderProducts.lowerPrice
-    }
-    else{
-      console.log("Nenhuma opção de ordenação correspondida, retornando array padrão")
-      return arrayCopy
+    switch(order){
+      case 0:
+        orderFunction = ToOrderProducts.random
+      break;
+      case 1:
+        orderFunction = ToOrderProducts.higherPrice
+      break;
+      case 2:
+        orderFunction = ToOrderProducts.lowerPrice
+      break;
+      case 3:
+        orderFunction = ToOrderProducts.type
+      break;
+      default:
+        return arrayCopy
     }
 
     arrayCopy.sort(orderFunction)
@@ -25,10 +28,6 @@ export class ToOrderProducts{
 
   }
 
-  /**
-   * Retorna um novo array ordenado em ordem crescente
-   * @param Array Array a ser ordenado
-   */
   private static higherPrice(a:Products, b:Products):number{
     const priceA = a.price.to
     const priceB = b.price.to
@@ -64,6 +63,18 @@ export class ToOrderProducts{
 
   private static random(a:Products, b:Products):number{
     return Math.floor(Math.random() * (2 - (-1)) + (-1))
+  }
+
+  private static type(a:Products, b:Products):number{
+    const categoryA = a.category.id
+    const categoryB = b.category.id
+
+    if(categoryA === categoryB){
+      return 0
+    }
+
+    return categoryA > categoryB? 1 : -1
+
   }
 
 }

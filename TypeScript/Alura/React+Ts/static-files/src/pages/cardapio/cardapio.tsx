@@ -20,7 +20,7 @@ export function Cardapio(){
         <Header />
         <SearchBar onChange={setSearchQuery}/>
         <FiltersBar onSelectFilter={setCurrentFilter} onChangeOrderBy={setOrder} />
-        <ProductsList category={currentFilter} orderBy={order} />
+        <ProductsList category={currentFilter} orderBy={order} search={searchQuery} />
       </>
   );
 }

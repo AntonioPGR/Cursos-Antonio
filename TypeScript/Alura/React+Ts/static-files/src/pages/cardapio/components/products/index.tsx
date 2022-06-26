@@ -9,38 +9,61 @@ import styles from "./products_list.module.scss"
 
 interface PropsProductsList{
   category: Filter | undefined,
-  orderBy: OrderTag | undefined
+  orderBy: OrderTag | undefined,
+  search: string
 }
 
-export function ProductsList({category, orderBy}:PropsProductsList){
+export function ProductsList({category, orderBy, search}:PropsProductsList){
 
   const [products, setProducts] = useState<Products[]>([])
 
   /*
-    * Verifica se o produto é valido perante os filtros passados
+    * filtra o array perante o filtro passado
   */
-  const isProductAvaible = (product:Products) => {
-    // caso não haja categoria selecionada libera o produto
+  const filterProducts = (toFilterProducts:Products[]) : Products[] => {
+    // caso não haja categoria, não filtra o array
     if(!category){
-      return true
+      return toFilterProducts;
     }
-    // caso o id da categoria do produto seja igual o da categoria selecionada libera o produto
-    if(product.getCategoryId() === category?.id){
-      return true
-    }
-    // se não seguir nenhuma das condições bloqueia o produto de aparecer
-    return false
+
+    const filteredProducts = toFilterProducts.filter((value)=>{
+      return value.getCategoryId() === category.id
+    })
+    return filteredProducts
+
   }
 
   /*
-    * ordena o array de produtos
+    * ordena o array de produtos perante a ordem passada
   */
-  const sortProducts = () => {
+  const sortProducts = (toSortProducts:Products[]) => {
     if(orderBy){
-      const sortedProducts = ToOrderProducts.orderTo(products, orderBy.id)
+      const sortedProducts = ToOrderProducts.orderTo(toSortProducts, orderBy.id)
       return sortedProducts
     }
-    return products
+    return toSortProducts
+  }
+
+  /*
+    * pesquisa no array perante a query passada
+  */
+  const searchProducts = (toSearchProducts:Products[]) : Products[] => {
+    if(!search){
+      return toSearchProducts
+    }
+
+    const searchedProducts = toSearchProducts.filter((value)=>{
+      if(value.description.includes(search)){
+        return true
+      }
+      if(value.getCategoryLabel().includes(search)){
+        return true
+      }
+      return false
+    })
+
+    return searchedProducts
+
   }
 
   /**
@@ -49,17 +72,16 @@ export function ProductsList({category, orderBy}:PropsProductsList){
    */
   const renderProducts = () => {
 
-    const orderedArray = sortProducts();
+    const filteredArray = filterProducts(products);
+    const orderedArray = sortProducts(filteredArray);
+    const searchedArray = searchProducts(orderedArray)
     
     // retorna os elementos renderizados
-    return orderedArray.map((value, index)=>{
+    return searchedArray.map((value, index)=>{
 
-      if(isProductAvaible(value)){
-        return (
-          <Product key={index} productInfo={value} />
-        )
-      }
-      return
+      return (
+        <Product key={index} productInfo={value} />
+      )
 
     })
   }
