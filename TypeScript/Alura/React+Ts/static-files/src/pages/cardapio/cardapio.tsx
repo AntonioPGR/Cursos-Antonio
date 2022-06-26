@@ -12,19 +12,15 @@ import { ProductsList } from "./components/products";
 export function Cardapio(){
   // armazena a string de busca inserida na barra de pesquisa
   const [searchQuery, setSearchQuery] = useState<string>("")
-  const [currentFilter, setCurrentFilter] = useState<Filter | undefined>(undefined)
+  const [currentFilter, setCurrentFilter] = useState<Filter>()
   const [order, setOrder] = useState<OrderTag>()
-
-  // useEffect(()=>console.log(currentFilter), [currentFilter])
-  // useEffect(()=>console.log(order), [order])
-  // useEffect(()=>console.log(searchQuery), [searchQuery])
 
   return (
       <>
         <Header />
         <SearchBar onChange={setSearchQuery}/>
         <FiltersBar onSelectFilter={setCurrentFilter} onChangeOrderBy={setOrder} />
-        <ProductsList />
+        <ProductsList category={currentFilter} orderBy={order} />
       </>
   );
 }

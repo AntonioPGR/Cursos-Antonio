@@ -1,5 +1,5 @@
 import styles from "./orderBy.module.scss";
-import filterStyles from "../../filtersBar.module.scss";
+import filterStyles from "../filtersBar.module.scss";
 import orders from "assets/json/orders.json";
 import { OrderTag } from "modules/orderBy"
 import { useEffect } from "react";

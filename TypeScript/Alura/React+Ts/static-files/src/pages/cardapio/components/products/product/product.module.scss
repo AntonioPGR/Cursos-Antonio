@@ -2,14 +2,14 @@
 
 .container{
   box-sizing: border-box;
-  width: 300px;
+  max-width: clamp(250px, 300px, 500px);
   padding: 10px;
   margin-right: 5px;
   margin-bottom: 10px;
 }
 
 .image{
-  width: 280px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
 }

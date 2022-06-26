@@ -1,5 +1,4 @@
 import { Products } from "modules/products"
-import Logo from "assets/imgs/cpu1.jpg";
 import styles from "./product.module.scss";
 
 interface PropsProduct{
@@ -10,7 +9,7 @@ export function Product({productInfo}:PropsProduct){
   return(
     <article className={styles.container}>
 
-      <img className={styles.image} src={Logo} alt={`imagem do produto ${productInfo.description}`} />
+      <img className={styles.image} src={productInfo.photo} alt={`imagem do produto ${productInfo.description}`} />
 
       <div className={styles.information}>
 

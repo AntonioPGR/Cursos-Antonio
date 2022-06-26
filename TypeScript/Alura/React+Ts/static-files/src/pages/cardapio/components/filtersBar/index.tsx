@@ -1,8 +1,8 @@
 // COMPONENTS
 import { Filter } from "modules/filters"
 import { OrderTag } from "modules/orderBy"
-import { Filters } from "./components/filters"
-import { OrderBy } from "./components/orderBy"
+import { Filters } from "./filters"
+import { OrderBy } from "./orderBy"
 
 // STYLES
 import styles from "./filtersBar.module.scss"

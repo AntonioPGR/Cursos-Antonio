@@ -3,7 +3,7 @@ import { Filter } from "modules/filters"
 import { ChangeEvent } from "react";
 
 import styles from "./filters.module.scss";
-import filterStyles from "../../filtersBar.module.scss"
+import filterStyles from "../filtersBar.module.scss"
 import classNames from "classnames";
 
 // OBS: para o estilo usei o checkbox, porém existe um módulo chamado ClassNames que pode ser usado para concaternar classes do css modules
