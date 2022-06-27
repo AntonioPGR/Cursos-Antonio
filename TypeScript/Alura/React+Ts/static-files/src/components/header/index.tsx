@@ -1,5 +1,5 @@
-import styles from "./header.module.scss"
-import Logo from "assets/imgs/logo.png"
+import styles from './header.module.scss';
+import Logo from 'assets/imgs/logo.png';
 
 export function Header(){
   return(
@@ -8,5 +8,5 @@ export function Header(){
         <img alt="Logo da pichau" src={Logo} className={styles.logo} />
       </div>
     </header>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import { Products } from "modules/products"
-import styles from "./product.module.scss";
+import { Products } from 'modules/products';
+import styles from './product.module.scss';
 
 interface PropsProduct{
   productInfo: Products
@@ -19,11 +19,11 @@ export function Product({productInfo}:PropsProduct){
 
         {
           productInfo.getFormatedBeforePrice()?
-          <div className={styles.before}>
+            <div className={styles.before}>
             De <span className={styles.fullPrice}>{productInfo.getFormatedBeforePrice()}</span> por:
-          </div> 
-          : 
-          ""
+            </div> 
+            : 
+            ''
         }
 
         <div className={styles.inCash}> 
@@ -43,5 +43,5 @@ export function Product({productInfo}:PropsProduct){
       </div>
 
     </article>
-  )
+  );
 }
