@@ -75,4 +75,13 @@ export class SearchFilter {
     return sortedProducts;
   }
 
+  public static productsWithOffers(
+    products: Product[]
+  ){
+    const offertedProducts = products.filter((value) => {
+      return value.price.from? true : false;
+    });
+    return offertedProducts;
+  }
+
 }

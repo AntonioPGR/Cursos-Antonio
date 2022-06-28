@@ -13,26 +13,10 @@ import { SearchFilter } from 'modules/searchFilter';
 // DATA
 import productsJson from 'data/products.json';
 
+// UTILS
+import { convertObjectsIntoProducts } from 'utils/jsonToProductArray';
+
 export function Shop(){
-
-  // FUNÇÕES: 
-  /*
-   * Converte um JSON array de objetos em um array de Product
-   * @returns array de Product baseado no objetos
-  */
-  const convertObjectsIntoProducts = (productsObjectArray: typeof productsJson) : Product[] => {
-    return productsObjectArray.map((value)=>{
-
-      return new Product(
-        value.description,
-        value.price,
-        value.id,
-        value.photo,
-        value.category
-      );
-
-    });
-  };
 
   // FILTROS:
   // armazena a string de busca inserida na barra de pesquisa
