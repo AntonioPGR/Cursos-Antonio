@@ -1,8 +1,8 @@
-import { Products } from './products';
+import { Product } from 'modules/product';
 
 export class ToOrderProducts{
 
-  public static orderTo(array:Products[], order:number){
+  public static orderTo(array:Product[], order:number){
     const arrayCopy = [...array];
 
     let orderFunction;
@@ -28,7 +28,7 @@ export class ToOrderProducts{
 
   }
 
-  private static higherPrice(a:Products, b:Products):number{
+  private static higherPrice(a:Product, b:Product):number{
     const priceA = a.price.to;
     const priceB = b.price.to;
 
@@ -44,7 +44,7 @@ export class ToOrderProducts{
     return 0;
   }
 
-  private static lowerPrice(a:Products, b:Products):number{
+  private static lowerPrice(a:Product, b:Product):number{
 
     const priceA = a.price.to;
     const priceB = b.price.to;
@@ -62,11 +62,11 @@ export class ToOrderProducts{
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  private static random(a:Products, b:Products):number{
+  private static random(a:Product, b:Product):number{
     return Math.floor(Math.random() * (2 - (-1)) + (-1));
   }
 
-  private static type(a:Products, b:Products):number{
+  private static type(a:Product, b:Product):number{
     const categoryA = a.category.id;
     const categoryB = b.category.id;
 

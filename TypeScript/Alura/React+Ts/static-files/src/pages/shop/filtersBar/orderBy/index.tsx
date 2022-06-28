@@ -1,7 +1,7 @@
 import styles from './orderBy.module.scss';
 import filterStyles from '../filtersBar.module.scss';
 import orders from 'data/orders.json';
-import { OrderTag } from 'modules/orderBy';
+import { OrderTag } from 'modules/orderTag';
 import { useEffect } from 'react';
 import classNames from 'classnames';
 

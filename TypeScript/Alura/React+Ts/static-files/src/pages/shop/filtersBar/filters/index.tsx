@@ -1,5 +1,5 @@
 import preSetFilters from 'data/filters.json';
-import { Filter } from 'modules/filters';
+import { Filter } from 'modules/filter';
 import { ChangeEvent } from 'react';
 
 import styles from './filters.module.scss';

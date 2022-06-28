@@ -1,7 +1,14 @@
+@import "assets/style/_variables.scss";
+
 .container{
   margin: 20px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   justify-items: center;
+}
+
+.warningMessage{
+  color: $darkRed;
+  font-size: 1.2rem;
 }

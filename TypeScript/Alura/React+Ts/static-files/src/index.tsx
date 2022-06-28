@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 
 // COMPONENTS IMPORT
 import { Header } from 'components/header';
-import { Cardapio } from './pages/cardapio/cardapio';
+import { Shop } from 'pages/shop/shop';
 // import { Home } from 'pages/home';
 
 // STYLE
@@ -16,7 +16,7 @@ function App() {
     <StrictMode>
 
       <Header />
-      <Cardapio />
+      <Shop />
       {/* <Home /> */}
       
     </StrictMode>

@@ -1,6 +1,6 @@
 // COMPONENTS
-import { Filter } from 'modules/filters';
-import { OrderTag } from 'modules/orderBy';
+import { Filter } from 'modules/filter';
+import { OrderTag } from 'modules/orderTag';
 import { Filters } from './filters';
 import { OrderBy } from './orderBy';
 

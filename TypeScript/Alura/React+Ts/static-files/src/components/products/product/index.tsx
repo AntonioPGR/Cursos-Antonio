@@ -1,11 +1,11 @@
-import { Products } from 'modules/products';
+import { Product } from 'modules/product';
 import styles from './product.module.scss';
 
 interface PropsProduct{
-  productInfo: Products
+  productInfo: Product
 }
 
-export function Product({productInfo}:PropsProduct){
+export function ProductContainer({productInfo}:PropsProduct){
   return(
     <article className={styles.container}>
 
