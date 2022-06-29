@@ -1,0 +1,10 @@
+[
+  {
+    "label": "Produtos",
+    "to": "/loja"
+  },
+  {
+    "label": "Sobre",
+    "to": "/sobre"
+  }
+]

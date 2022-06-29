@@ -1,3 +1,5 @@
+@import 'assets/style/_variables.scss';
+
 .container{
   display: flex;
   flex-flow: row wrap;
@@ -7,8 +9,30 @@
   align-content: flex-start;
 
   padding: 20px 20px 10px;
+
 }
 
 .logo{
   height: 50px;
+  margin-right: 10px;
+}
+
+.navMenu{
+  display: flex;
+
+}
+
+.menuLink{
+  padding: 10px 15px;
+  margin: 5px 5px 0 20px;
+  text-decoration: none;
+  color: $white;
+  font-size: 1.1rem;
+  border-radius: 2px;
+  transition: 0.5s;
+  
+  &:hover{
+    background-color: $darkRed;
+  }
+
 }
