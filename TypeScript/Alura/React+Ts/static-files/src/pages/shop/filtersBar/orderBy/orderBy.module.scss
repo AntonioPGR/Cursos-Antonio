@@ -17,6 +17,10 @@
   max-width: 150px;
 }
 
+.select:hover{
+  cursor: pointer;
+}
+
 .select:focus{
   border: 0;
   outline: 0;

@@ -4,6 +4,13 @@
   list-style: none;
   display: flex;
   flex-flow: row wrap;
+
+  justify-content: center;
+
+  @media screen and (min-width: 765px) {
+    justify-content: space-between;
+  }
+
 }
 
 .filter{
@@ -29,4 +36,8 @@
   height: 100%;
   text-align: center;
   user-select: none;
+}
+
+.name:hover{
+  cursor: pointer;
 }

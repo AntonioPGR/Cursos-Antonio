@@ -52,3 +52,8 @@ body{
   box-sizing: border-box;
   font-family: $defaultFont;
 }
+
+*::selection{
+  background-color: #ff2323;
+  color: #000000;
+}

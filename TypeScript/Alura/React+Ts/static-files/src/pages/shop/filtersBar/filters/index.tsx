@@ -53,8 +53,8 @@ export function Filters({ onSelect }:PropsFilters){
         <li key={index} className={ classNames({
           [styles.filter]: true,
           [filterStyles.filterElement]: true,
-        }
-        )} >
+        })} 
+        >
           <input 
             type="checkbox" 
             name="filter" 
