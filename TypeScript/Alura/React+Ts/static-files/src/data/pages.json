@@ -1,5 +1,9 @@
 [
   {
+    "label": "Inicio",
+    "to": "/"
+  },
+  {
     "label": "Produtos",
     "to": "/loja"
   },

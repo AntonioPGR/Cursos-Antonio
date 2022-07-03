@@ -1,13 +1,24 @@
 @import 'assets/style/_variables.scss';
 
 .container{
-  margin: 20px;
-  display: grid;
-  grid-template-columns: minmax(100px, 300px) auto;
-  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  padding: 20px;
+
+  @media screen and (min-width: 1500px) {
+    margin: 20px auto;
+  }
 }
 
-.logo{
-  margin-right: 10px;
-  width: 100%;
+.logoContainer{
+  max-width: 300px;
+  min-width: 70px;
+  margin-right: 20px;
+
+  .logo{
+    margin-right: 10px;
+    width: 100%;
+  }
 }
