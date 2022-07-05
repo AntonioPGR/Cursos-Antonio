@@ -1,0 +1,9 @@
+.slidesContainer{
+  display: flex;
+  flex-flow: row nowrap;
+
+  .slide{
+    max-height: 300px;
+  }
+
+}

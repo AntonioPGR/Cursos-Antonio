@@ -1,12 +1,12 @@
 // COMPONENTS
 import { FeaturedOffers } from './featuredoffers';
-import { Slide } from './slide';
+import { SlidesContainer } from './slidesContainer/index';
 
 export function Home(){
 
   return(
     <>
-      <Slide />
+      <SlidesContainer />
       <FeaturedOffers />
     </>
   );
