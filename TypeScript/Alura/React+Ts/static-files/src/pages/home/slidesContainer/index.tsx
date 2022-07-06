@@ -6,21 +6,15 @@ import styles from './slides.module.scss';
 
 // EXTERNAL
 import { BsArrowRightCircleFill as RightArrow, BsArrowLeftCircleFill as LeftArrow  } from 'react-icons/bs';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import classNames from 'classnames';
 
 export function SlidesContainer(){
 
   // index do slide atual
   const [currentIndex, setIndex] = useState(0);
-  // slide atual, alterado conforme o index é alterado
-  const [currentSlide, setCurrentSlide] = useState(slidesJson[currentIndex]);
 
-  useEffect(()=>{
-    setCurrentSlide(slidesJson[currentIndex]);
-    console.log(currentIndex);
-  }, [currentIndex]);
-
-  const increaseSlide = () => {
+  const nextSlide = () => {
     let newSlide = currentIndex + 1;
     if( newSlide >= slidesJson.length){
       newSlide = 0;
@@ -28,7 +22,7 @@ export function SlidesContainer(){
     setIndex(newSlide);
   };
 
-  const decreaseSlide = () => {
+  const previousSlide = () => {
     let newSlide = currentIndex - 1;
     if(newSlide < 0){
       newSlide = slidesJson.length - 1;
@@ -36,23 +30,64 @@ export function SlidesContainer(){
     setIndex(newSlide);
   };
 
+  const isBeforeSlide = (index:number) => {
+    if(
+      index + 1 === currentIndex ||
+      index === (slidesJson.length - 1) && currentIndex === 0
+    ){
+      return true;
+    }
+    return false;
+  };
+
+  const isAfterSlide = (index:number) => {
+    if(
+      index - 1 === currentIndex ||
+      currentIndex === (slidesJson.length - 1) && index === 0
+    ){
+      return true;
+    }
+    return false;
+  };
+
+  if(!Array.isArray(slidesJson) || slidesJson.length == 0){
+    return null;
+  }
+
   return(
-    <>
+    <div className={styles.slideShow}>
       <div className={styles.slidesContainer}>
         {
           slidesJson.map((value, index)=>{
+            console.log(currentIndex === index);
             return (
-              <div key={index}>
-                <img className={styles.slide} alt={value.alt} src={value.src} />
+              <div 
+                className={
+                  classNames({
+                    [styles.slide]:true,
+                    [styles.active]: currentIndex === index,
+                    [styles.slideBefore]: isBeforeSlide(index),
+                    [styles.slideAfter]: isAfterSlide(index) 
+                  })
+                }
+                key={index}
+              >
+                {
+                  index === currentIndex && (<img className={styles.image} alt={value.alt} src={value.src} />)
+                }
               </div>
             );
           })
         }
       </div>
-      <div>
-        <LeftArrow onClick={decreaseSlide} />
-        <RightArrow onClick={increaseSlide}/>
+      <div className={styles.arrowsContainer}>
+        <span className={styles.leftArrow}>
+          <LeftArrow onClick={previousSlide} />
+        </span>
+        <span className={styles.rightArrow}>
+          <RightArrow onClick={nextSlide}/>
+        </span>
       </div>
-    </>
+    </div>
   );
 }
