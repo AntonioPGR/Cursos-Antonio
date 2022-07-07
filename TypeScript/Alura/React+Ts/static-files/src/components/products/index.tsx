@@ -36,10 +36,10 @@ export function ProductsList({listProducts}:PropsProductsList){
   };
 
   return(
-    <main className={styles.container}>
+    <div className={styles.container}>
       {
         renderProducts()
       }
-    </main>
+    </div>
   );
 }

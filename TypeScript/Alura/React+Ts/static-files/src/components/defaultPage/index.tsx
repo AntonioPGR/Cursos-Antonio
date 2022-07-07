@@ -1,5 +1,6 @@
 // COMPONENTS
 import { Header } from 'components/header';
+import { Footer } from 'components/footer';
 
 // STYLE
 import styles from './main.module.scss';
@@ -13,9 +14,11 @@ export function DefaultPage(){
 
       <Header />
 
-      <div className={styles.container}>
+      <main className={styles.container}>
         <Outlet />
-      </div>
+      </main>
+
+      <Footer />
 
     </>
   );

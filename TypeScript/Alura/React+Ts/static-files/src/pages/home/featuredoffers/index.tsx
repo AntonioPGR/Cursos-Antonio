@@ -24,10 +24,10 @@ export function FeaturedOffers(){
   const randomOffers = getRandomItens(offers, 4);
 
   return (
-    <main>
+    <div>
       <h2 className={styles.title} >Ofertas em destaque <AiFillFire className={styles.icon} /> </h2>
       <ProductsList listProducts={randomOffers} />
-    </main>
+    </div>
   );
 
 }

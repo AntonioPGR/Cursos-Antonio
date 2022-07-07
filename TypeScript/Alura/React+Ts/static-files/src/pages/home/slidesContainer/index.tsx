@@ -59,7 +59,6 @@ export function SlidesContainer(){
       <div className={styles.slidesContainer}>
         {
           slidesJson.map((value, index)=>{
-            console.log(currentIndex === index);
             return (
               <div 
                 className={

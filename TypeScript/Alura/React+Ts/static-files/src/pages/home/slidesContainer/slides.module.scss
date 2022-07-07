@@ -1,25 +1,20 @@
 @import 'assets/style/_variables.scss';
 
 .slideShow{
-  position: relative;
   user-select: none;
   overflow-x: hidden;
-  
-  > *{
-    z-index: -1;
-  }
-
+  z-index: -1;
 }
 
 .slidesContainer{
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 200px);
 
   .slide{
+    z-index: -1;
     position: relative;
     width: 0%;
     height: 100%;
@@ -28,7 +23,6 @@
     .image{
       width: 100%;
       height: 100%;
-      object-fit: cover;
     }
 
   }
@@ -52,24 +46,19 @@
 }
 
 .arrowsContainer{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   user-select: none;
-  z-index: 0;
-
-  > *{
-    z-index: 1;
-  }
   
   .leftArrow, .rightArrow{
     cursor: pointer;
     color: $darkRed;
-    margin: 0 20px;
+    margin: 20px;
     font-size: 3rem;
   }
 
