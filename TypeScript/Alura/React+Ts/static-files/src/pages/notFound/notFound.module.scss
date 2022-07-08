@@ -7,11 +7,11 @@
 
     > *{
       display: block;
+      margin-bottom: 20px;
     }
 
     .text{
       color: $white;
-      margin-bottom: 20px;
     }
 
     h1.text{
@@ -27,7 +27,8 @@
       line-height: 1.3rem;
     }
 
-    .backToHub{
+    .backTo{
+      cursor: pointer;
       display: inline-block;
       text-decoration: none;
       padding: 10px;
