@@ -7,6 +7,7 @@ import { NotFound } from 'pages/notFound';
 
 // EXTERNAL
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ProductPage } from 'pages/productPage';
 
 export function AppRoutes(){
   return (
@@ -15,8 +16,9 @@ export function AppRoutes(){
       <Routes>
         <Route path='/' element={ <DefaultPage /> }>
           <Route index element={<Home/>} />
-          <Route path="loja" element={<Shop/>} />
-          <Route path="sobre" element={<AboutUs />} />
+          <Route path='loja' element={<Shop/>} />
+          <Route path='sobre' element={<AboutUs />} />
+          <Route path='produto/:id' element={ <ProductPage /> } />
           <Route path='*' element={ <NotFound /> } />
         </Route>
       </Routes>

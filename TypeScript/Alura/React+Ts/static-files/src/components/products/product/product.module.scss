@@ -1,9 +1,21 @@
 @import "assets/style/_variables.scss";
 
+.linkContainer{
+  text-decoration: none;
+}
+
 .container{
   padding: 10px;
   margin-right: 5px;
   margin-bottom: 10px;
+  border-radius: 5px;
+
+  transition: box-shadow 0.3s ease-in;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  }
+
 }
 
 .image{
@@ -29,9 +41,11 @@
   .before{
     color: $darkRed;
     margin-bottom: 5px;
+    text-decoration: underline;
 
     .fullPrice{
       text-decoration: line-through;
+      
     }
   
 
@@ -51,6 +65,7 @@
     .price{
       font-size: 2rem;
       margin-bottom: 8px;
+      text-decoration: underline;
     }
 
     .price::after{
@@ -69,6 +84,7 @@
 
     *{
       color: $darkRed;
+      text-decoration: underline;
     }
 
     >*{
