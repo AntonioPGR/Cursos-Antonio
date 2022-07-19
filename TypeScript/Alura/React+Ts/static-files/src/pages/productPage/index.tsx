@@ -11,26 +11,53 @@ import { Product } from 'modules/product';
 import productsJson from 'data/products.json';
 
 // EXTERNAL
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 export function ProductPage(){
-  const productProps = useParams();
-  const productId = Number(productProps.id);
-  const productJson = productsJson.filter((value)=>{
-    return value.id === productId;
-  })[0];
-  if(!productJson){
+
+  // Funções
+  // busca o produto com id correspondente ou undefined caso não haja resultado para busca
+  const findProductById = (productId:number) :Product | undefined => {
+    
+    const result = productsJson.filter((value) => {
+      return productId === value.id;
+    })[0];
+    return result? Product.ConvertToProduct(result) : undefined;
+
+  };
+
+  // Retorna o produto a ser exibido na forma da classe ou undefined caso haja alguma informação errada
+  const getProduct = () : Product | undefined => {
+    // Verifica se há um State passado e se corresponde a um produto válido
+    if(locationState && Product.isProduct(locationState)){
+      return Product.ConvertToProduct(locationState as Product);
+    }
+    // Caso o State seja invalido tenta buscar pelo ID do produto, caso exista
+    else if(paramsId){
+      return findProductById(paramsId);
+    }
+    // Caso não atenda nenhuma das opções, seta product para undefined
+    else {
+      return undefined;
+    }
+  };
+  
+  // Variaves do componente
+  const location = useLocation();
+  const locationState = location.state || undefined;
+  const params = useParams();
+  const paramsId = Number(params.id) || undefined;
+  const navigate = useNavigate();
+
+  const [product] = useState<Product | undefined>(getProduct());
+
+  // Caso product esteja indefinido, retorna uma pagina de notFound
+  if(!product){
     return <NotFound />;
   }
 
-  const product = new Product(
-    productJson.description,
-    productJson.price,
-    productJson.id,
-    productJson.photo,
-    productJson.category
-  );
-  const navigate = useNavigate();
+  console.log(product);
 
   return(
     <div className={styles.container}>

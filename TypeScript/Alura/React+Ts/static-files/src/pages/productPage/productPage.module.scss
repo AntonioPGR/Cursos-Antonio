@@ -2,7 +2,9 @@
 
 .mediaContainer{
 
-  @media screen and (min-width:600px) {
+  min-height: 70vh;
+
+  @media screen and (min-width:700px) {
     display: grid;
     grid-template-columns: 1fr 2fr;
     justify-content: center;
@@ -10,6 +12,7 @@
     align-items: center;
     align-content: center;
   }
+  margin-bottom: 20px;
 
 }
 

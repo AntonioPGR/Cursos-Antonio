@@ -26,7 +26,6 @@ export function ProductsList({listProducts}:PropsProductsList){
     
     // retorna os elementos renderizados
     return listProducts?.map((value, index)=>{
-
       return (
         <ProductContainer key={index} productInfo={value} />
       );
