@@ -20,9 +20,7 @@ export function ProductPage(){
   // busca o produto com id correspondente ou undefined caso não haja resultado para busca
   const findProductById = (productId:number) :Product | undefined => {
     
-    const result = productsJson.filter((value) => {
-      return productId === value.id;
-    })[0];
+    const result = productsJson.find(item => item.id === productId);
     return result? Product.ConvertToProduct(result) : undefined;
 
   };

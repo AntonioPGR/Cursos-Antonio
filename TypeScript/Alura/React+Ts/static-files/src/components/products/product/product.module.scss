@@ -9,11 +9,12 @@
   margin-right: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
+  cursor: pointer;
 
-  transition: box-shadow 0.3s ease-in;
+  transition: all 0.3s ease-in;
   &:hover{
-    cursor: pointer;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    background-color: #353535;
   }
 
 }
